@@ -1,8 +1,6 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
 
-    hamburger.addEventListener('click', function () {
-        navLinks.classList.toggle('active');
-    });
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active'); // Ajoute ou retire la classe 'active'
 });
