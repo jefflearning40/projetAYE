@@ -1,5 +1,6 @@
 @import url("./navbar.css");
 @import url("./banner.css");
+@import url("./responsiv.css");
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -26,112 +27,7 @@ body {
 .menu p {
     margin-top: 5px; 
     font-size: 1em; 
-    color: #ffffff; 
-}
-
-/* .navbar {
-    position: fixed; 
-    top: 0; 
-    left: 0; 
-    width: 100%;
-    background-color: #333; 
-    color: white; 
-    z-index: 1000; 
-    display: flex; 
-    align-items: center; 
-    padding: 10px 15px; /
-}
-
-.logo {
-    margin-right: 20px; 
-}
-
-.logo img {
-    max-height: 50px; 
-    width: auto; 
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 1em; 
-    margin: 0;
-    padding: 0; 
-    padding-left: 10px; 
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: white;
-    transition: color 0.3s, background-color 0.3s; 
-    padding: 5px 8px; 
-}
-
-.nav-links a:hover,
-.nav-links a:focus { 
-    color: #00bcd4; 
-    background-color: rgba(0, 188, 212, 0.2); 
-    border-radius: 4px; 
-}
-
-.hamburger {
-    display: none; 
-    flex-direction: column;
-    gap: 5px; 
-    cursor: pointer;
-}
-
-.hamburger span {
-    width: 25px;
-    height: 3px;
-    background-color: white;
-} */
-
-
-@media (max-width: 768px) {
-    .nav-links {
-        display: none; 
-        flex-direction: column;
-        position: absolute;
-        top: 60px; 
-        left: 0;
-        background-color: #333;
-        width: 100%;
-        z-index: 1; 
-    }
-
-    .nav-links.active {
-        display: flex; 
-    }
-
-    .hamburger {
-        display: flex; 
-    }
-}
-
-/* .banner {
-    position: relative;
-    text-align: center; 
-    color: white; 
-}
-
-.banner-image {
-    width: 100%; 
-    max-height: 400px; 
-    height: auto; 
-    object-fit: cover; 
-}
-
-.banner-title {
-    position: absolute; 
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%); 
-    font-size: 2.5em; 
-    background-color: rgba(0, 0, 0, 0); 
-    padding: 10px; 
-    border-radius: 5px; 
-} */
+    color: #ffffff; }
 .footer {
     background-color: #333; /* Couleur de fond du footer */
     color: white; /* Couleur du texte du footer */
