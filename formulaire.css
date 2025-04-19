@@ -1,0 +1,47 @@
+
+* {
+    box-sizing: border-box; 
+}
+.formulaire {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    margin: 20px auto; 
+    width: 90%; 
+}
+.formulaire label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.formulaire input {
+    width: 100%; 
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+.formulaire input:focus {
+    border-color: #2a69ac; 
+    outline: none;
+}
+.formulaire button {
+    background-color: #1e3c72;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    width: 100%; 
+}
+
+.formulaire button:hover {
+    background-color: #2a69ac; 
+    transform: scale(1.05); 
+}
+
+

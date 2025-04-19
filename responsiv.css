@@ -17,3 +17,66 @@
     .hamburger {
         display: flex; 
     }
+    .formulaire {
+        padding: 15px; 
+        margin: 10px; 
+    }
+
+    .formulaire input {
+        padding: 12px; 
+    }
+
+    .formulaire button {
+        padding: 12px; 
+    }
+
+    
+    .formulaire label {
+        font-size: 0.9em; 
+    }
+
+    .formulaire input, .formulaire button {
+        font-size: 0.9em; 
+    }
+}
+@media (min-width: 1025px) {
+    .formulaire-contacte {
+        max-width: 600px; 
+    }
+}
+
+
+@media (min-width: 600px) and (max-width: 1024px) {
+    .formulaire-contacte {
+        padding: 15px; 
+        max-width: 90%; 
+    }
+
+    .formulaire-contacte label {
+        font-size: 0.9em; 
+    }
+
+    .formulaire-contacte input,
+    .formulaire-contacte textarea,
+    .formulaire-contacte button {
+        padding: 12px; 
+    }
+}
+
+
+@media (max-width: 599px) {
+    .formulaire-contacte {
+        padding: 10px; 
+        margin: 10px; 
+    }
+
+    .formulaire-contacte label {
+        font-size: 0.85em; 
+    }
+
+    .formulaire-contacte input,
+    .formulaire-contacte textarea,
+    .formulaire-contacte button {
+        padding: 10px; 
+    }
+}
