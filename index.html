@@ -1,38 +1,35 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Site pour pratiquer l'anglais" />
     <title>Ace your Exam</title>
     <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <nav class="navbar">
-        <div class="logo"><img src="assets/pictures/iconplaces/logositenglish.jpeg" alt=""></div>
+</head>
+<body>
+    <nav class="navbar" role="navigation" aria-label="Navigation principale">
+        <div class="logo"><img src="assets/pictures/iconplaces/logositenglish.jpeg" alt="Logo Ace your Exam"></div>
         <ul class="nav-links">
             <li><a href="#">Accueil</a></li>
             <li><a href="#">À propos</a></li>
             <li><a href="formulaire.html">Inscription</a></li>
             <li><a href="#">Connexion</a></li>
         </ul>
-        <div class="hamburger">
+        <div class="hamburger" aria-label="Menu hamburger">
             <span></span>
             <span></span>
             <span></span>
         </div>
     </nav>
-    <section class="banner">
-      <img
-        src="assets/pictures/bgpicture/bg-banner.jpg"
-        alt="Bannière"
-        class="banner-image"
-      />
-      <h1 class="banner-title">Ace your Exam</h1>
+    
+    <section class="banner" role="banner">
+        <img src="assets/pictures/bgpicture/bg-banner.jpg" alt="Bannière" class="banner-image" />
+        <h1 class="banner-title">Ace your Exam</h1>
     </section>
-      
-    <section class="menu">
-        <h2>Apprenez en pratiquant</h2>
+    
+    <section class="menu" role="region" aria-labelledby="menu-title">
+        <h2 id="menu-title">Apprenez en pratiquant</h2>
         <p>Venez visiter le salon des anglophones</p>
         
         <div class="img-container">
@@ -63,6 +60,7 @@
             </a>
         </div>
     </section>
+    
     <footer class="footer">
         <div class="footer-content">
             <p>&copy; 2025 fil rouge de la formation.</p>
@@ -73,15 +71,16 @@
             </ul>
         </div>
     </footer>
-    <!-- Popup  about-->
-<div id="aboutPopup" class="popup">
-    <div class="popup-content">
-        <span class="close-btn">&times;</span>
-        <h2>À propos du site Ace Your Exam</h2>
-        <p>Si vous cherchez des personnes anglophones pour pratiquer votre anglais sans vous ruiner financierement, vous êtes au bon endroit.Nos intervenants anglophones issues de tous les pays du common wealth, et des etudiants en langues étrangeres sont presents pour vous entrainer afin que vous soyez prets a passer l'examen CLOE ou TOEIC</p>
+    
+    <!-- Popup about -->
+    <div id="aboutPopup" class="popup" role="dialog" aria-labelledby="popup-title" aria-describedby="popup-description" aria-hidden="true">
+        <div class="popup-content">
+            <span class="close-btn" aria-label="Fermer le popup">&times;</span>
+            <h2 id="popup-title">À propos du site Ace Your Exam</h2>
+            <p id="popup-description">Si vous cherchez des personnes anglophones pour pratiquer votre anglais sans vous ruiner financièrement, vous êtes au bon endroit. Nos intervenants anglophones issus de tous les pays du Commonwealth et des étudiants en langues étrangères sont présents pour vous entraîner afin que vous soyez prêts à passer l'examen CLOE ou TOEIC.</p>
+        </div>
     </div>
-</div>
 
     <script src="script.js"></script>
-  </body>
+</body>
 </html>
