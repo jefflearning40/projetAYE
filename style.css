@@ -1,9 +1,9 @@
-@import url("./navbar.css");
-@import url("./banner.css");
-@import url("./responsiv.css");
-@import url("./formulaire.css");
-@import url("./footer.css");
-@import url("./contact.css");
+@import url("assets/styles/navbar.css");
+@import url("assets/styles/banner.css");
+@import url("assets/styles/responsiv.css");
+@import url("assets/styles/formulaire.css");
+@import url("assets/styles/footer.css");
+@import url("assets/styles/contact.css");
 
 body {
     margin: 0;
