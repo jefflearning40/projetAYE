@@ -58,14 +58,14 @@ body {
 
 /* Popup Styles */
 .popup {
-    display: none;
-    position: fixed;
+    display: none; /* Masqué par défaut */
+    position: fixed; /* Position fixe pour couvrir l'écran */
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.6); /* Fond semi-transparent */
+    z-index: 1000; /* Au-dessus des autres éléments */
 }
 
 .popup-content {
