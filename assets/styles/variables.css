@@ -1,0 +1,11 @@
+:root {
+    --body-bg-color: linear-gradient(blue, rgb(84, 217, 250));
+    --menu-bg-color:linear-gradient(180deg, #1e3c72 0%, #2a69ac 100%);
+    --pen-color-white:white;
+    --popup-bg-color: rgba(0, 0, 0, 0.6); 
+    --popco-bg-color: rgba(255, 255, 255, 0.8);
+    --popup-sh-white:13px 12px 20px 8px rgb(237 232 232 / 50%);
+    --pen-color-black:rgb(6, 6, 6);
+    --video-modal-bg:rgba(0, 0, 0, 0.8); 
+    --video-conte-bg:rgba(255, 255, 255, 0.9);
+}

@@ -4,17 +4,18 @@
 @import url("assets/styles/formulaire.css");
 @import url("assets/styles/footer.css");
 @import url("assets/styles/contact.css");
+@import url("assets/styles/variables.css");
 
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(blue, rgb(84, 217, 250));
+    background: var(--body-bg-color);
 }
 
 /* Menu Styles */
 .menu {
-    background: linear-gradient(180deg, #1e3c72 0%, #2a69ac 100%);
-    color: white;
+    background: var(--menu-bg-color);
+    color:var(--menu-pen-color);
     padding: 20px;
     text-align: center;
 }
@@ -56,16 +57,16 @@ body {
     outline: 2px solid #1e3c72;
 }
 
-/* Popup Styles */
+
 .popup {
-    display: none; /* Masqué par défaut */
-    position: fixed; /* Position fixe pour couvrir l'écran */
+    display: none; 
+    position: fixed; 
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* Fond semi-transparent */
-    z-index: 1000; /* Au-dessus des autres éléments */
+    background-color: var(--popup-bg-color);
+    z-index: 1000;
 }
 
 .popup-content {
@@ -73,10 +74,10 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: var(--popco-bg-color);
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: var(--popup-sh-white);
     text-align: center;
 }
 
@@ -89,9 +90,9 @@ body {
 
 .teams-section {
     padding: 20px;
-    background: linear-gradient(blue, rgb(84, 217, 250));
+    background: var(--body-bg-color);
     text-align: center;
-    color:rgb(0, 0, 0);
+    color:var(--pen-color-white);
 }
 
 .teams-container {
@@ -101,9 +102,9 @@ body {
     padding: 20px;
 }
 #videoScreen {
-    width: 100%; /* Prend toute la largeur de la modale */
-    height: 500px; /* Ajustez la hauteur ici */
-    border: none; /* Enlève la bordure autour de l'iframe */
+    width: 100%; 
+    height: 500px; 
+    border: none; 
 }
 .teams-info {
     flex: 1;
@@ -121,14 +122,14 @@ body {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); 
+    background-color: var(--video-modal-bg); 
     z-index: 1000; 
     align-items: center; 
     justify-content: center; 
 }
 
 .video-modal-content {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: var(--video-conte-bg);
     padding: 20px;
     border-radius: 8px;
     text-align: center;
@@ -153,7 +154,7 @@ body {
     align-items: center;
     font-size: 1.5em; 
     border-radius: 5px; 
-    color: white; 
+    color: var(--pen-color-white); 
     cursor: pointer; 
     transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
