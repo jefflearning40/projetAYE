@@ -1,68 +1,108 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Site pour pratiquer l'anglais page formulaire d'inscription" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Site pour pratiquer l'anglais page formulaire d'inscription"
+    />
     <title>Ace your Exam - Inscription</title>
     <link rel="stylesheet" href="style.css" />
-</head>
-<body>
+  </head>
+  <body>
     <nav class="navbar">
-        <div class="logo"><img src="assets/pictures/iconplaces/logositenglish.jpeg" alt=""></div>
-        <ul class="nav-links">
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="#">À propos</a></li>
-            <li><a href="formulaire.html">Inscription</a></li>
-            <li><a href="#">Connexion</a></li>
-        </ul>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+      <div class="logo">
+        <img src="assets/pictures/iconplaces/logositenglish.jpeg" alt="" />
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="#">À propos</a></li>
+        <li><a href="formulaire.html">Inscription</a></li>
+        <li><a href="#">Connexion</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </nav>
     <section class="banner">
-      <img  
+      <img
         src="assets/pictures/bgpicture/bg-banner.jpg"
         alt="Bannière"
         class="banner-image"
       />
       <h1 class="banner-title">Inscription</h1>
     </section>
-    <div class="formulaire-contacte">
+    <div class="formulaire">
         <form action="">
             <label for="nom">Nom</label>
             <input type="text" id="nom" name="nom">
+
             <label for="prenom">Prénom</label>
-            <input type="text" id="identifiant" name="identifiant">
-            <label for="email">Adresse mail</label>
-            <input type="email" id="email" name="email">
+            <input type="text" id="prenom" name="prenom">
+
+            <label for="adresse">Adresse</label>
+            <input type="text" id="adresse" name="adresse">
+
             <label for="tel">Téléphone</label>
             <input type="tel" id="tel" name="tel">
+
+            <label for="email">Adresse mail</label>
+            <input type="email" id="email" name="email">
+
+            <div class="checkbox-container">
+                <input type="checkbox" id="consentement" name="consentement">
+                <label id="terms-label" for="consentement"><a href="#">J'accepte les termes et conditions</a></label>
+            </div>
+
             <button type="submit">S'inscrire</button>
         </form>
     </div>
     <footer class="footer">
-        <div class="footer-content">
-            <p>&copy; 2025 Afec Dax.</p>
-            <ul class="footer-links">
-                <li><a href="#">Politique de confidentialité</a></li>
-                <li><a href="#">Conditions d'utilisation</a></li>
-                <li><a href="contact.html">Contactez-nous</a></li>
-            </ul>
-        </div>
+      <div class="footer-content">
+        <p>&copy; 2025 Afec Dax.</p>
+        <ul class="footer-links">
+          <li><a href="#">Politique de confidentialité</a></li>
+          <li><a href="#">Conditions d'utilisation</a></li>
+          <li><a href="contact.html">Contactez-nous</a></li>
+        </ul>
+      </div>
     </footer>
     <!-- Popup about -->
-    <div id="aboutPopup" class="popup" role="dialog" aria-labelledby="popup-title" aria-describedby="popup-description" aria-hidden="true">
+    <div
+      id="aboutPopup"
+      class="popup"
+      role="dialog"
+      aria-labelledby="popup-title"
+      aria-describedby="popup-description"
+      aria-hidden="true"
+    >
+      <div class="popup-content">
+        <span class="close-btn" aria-label="Fermer le popup">&times;</span>
+        <h2 id="popup-title">À propos de l'inscription</h2>
+        <p id="popup-description">
+          Ici, inscrivez vous afin que je puisse vous envoyer votre identifiant
+          et un mot de passe provisoire que vous pourrez changer
+          ulterieurement.Sans inscription, il est impossible de rejoindre le
+          salon de discussion mais vous vous avez la possibilité de recevoir le
+          resultat de votre test de niveau.
+        </p>
+      </div>
+    </div>
+    <div id="termsPopup" class="popup">
         <div class="popup-content">
-            <span class="close-btn" aria-label="Fermer le popup">&times;</span>
-            <h2 id="popup-title">À propos de l'inscription</h2>
-            <p id="popup-description">Ici, inscrivez vous afin que je puisse vous envoyer votre identifiant et un mot de passe provisoire que vous pourrez changer ulterieurement.Sans inscription, il est impossible de rejoindre le salon de discussion mais vous vous avez la possibilité de recevoir le resultat de votre test de niveau.</p>
+            <span class="close-btn">&times;</span>
+            <h2>Termes et Conditions</h2>
+            <p>Ici, vous pouvez lire les termes et conditions avant de valider...</p>
+            <button id="open-pdf-btn">Ouvrir le PDF</button>
         </div>
     </div>
+    
     <script src="assets/scripts/script.js"></script>
     <script src="assets/scripts/scriptachatminute.js"></script>
     <script src="assets/scripts/visiomodal.js"></script>
-</body>
+    <script src="assets/scripts/termes.js"></script>
+  </body>
 </html>

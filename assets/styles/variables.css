@@ -1,7 +1,9 @@
 :root {
    
     --pen-color-white:white;
-    --pen-color-black:rgb(0, 0, 0);
+    --pen-color-black:black;
+    --pen-color-bleue: #2a69ac;
+    --pen-color-marine:#1e3c72;
     --pen-color-online:green;
     --pen-color-busy:orange;
     --pen-color-offline:red;
