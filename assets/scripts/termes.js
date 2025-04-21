@@ -20,6 +20,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     openPdfBtn.addEventListener('click', function () {
-        window.open('assets/', '_blank'); // Remplacez URL_DU_PDF par l'URL réelle de votre PDF  
+        window.open('assets/termes/rgpd.pdf', '_blank'); 
     });
 });
