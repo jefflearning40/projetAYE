@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const termsLabel = document.getElementById('terms-label');
+    const termsLabel = document.getElementById('terms-label'); // Assurez-vous que cet ID existe dans votre HTML  
     const termsPopup = document.getElementById('termsPopup');
     const closeBtn = document.querySelector('.close-btn');
     const openPdfBtn = document.getElementById('open-pdf-btn');
