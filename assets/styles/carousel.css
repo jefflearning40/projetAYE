@@ -36,8 +36,8 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
+    background-color: var(--pen-clear-black);
+    color:var(--pen-color-white);
     border: none;
     font-size: 24px;
     cursor: pointer;
