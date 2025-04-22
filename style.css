@@ -8,12 +8,15 @@
 @import url("assets/styles/visio.css");
 @import url("assets/styles/carousel.css");
 @import url("assets/styles/termes.css");
+@import url("assets/styles/login.css");
+
 
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     background: var(--degrade-bg-color);
 }
+
 
 
 .menu {
