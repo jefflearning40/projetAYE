@@ -1,6 +1,17 @@
 @use 'elements/reset';
 @use 'elements/document';
+@use "variables";
 
-@use 'settings/config.colors';
+@use "mixins";
 
-@use 'components/sections';
+@use "navbar";
+@use "banner";
+@use "responsiv";
+@use "formulaire";
+@use "footer";
+@use "contact";
+@use "visio";
+@use "carousel";
+@use "termes";
+@use "login";
+@use "shame";
