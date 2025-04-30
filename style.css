@@ -138,7 +138,7 @@ body {
 }
 
 .category-button {
-    background-color: var(--pen-color-dark-blue); /* Bleu foncé */
+    background-color: var(--pen-color-dark-blue); 
     color: var(--pen-color-white);
     border: none;
     padding: 15px 30px;
@@ -152,7 +152,7 @@ body {
 }
 
 .category-button.completed {
-    background-color: var(--pen-color-green); /* Vert */
+    background-color: var(--pen-color-green); 
 }
 
 .category-button:hover,
@@ -163,6 +163,30 @@ body {
 .percentage {
     font-size: 1em;
     color: var(--pen-color-white);
+}
+.pdf-button-section {
+    text-align: center;
+    padding: 20px;
+    background: var(--degrade-bg-color);
+    color: var(--pen-color-white);
+}
+
+.pdf-button {
+    display: inline-block;
+    background-color: var(--pen-color-dark-blue);
+    color: var(--pen-color-white);
+    border: none;
+    padding: 10px 20px;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+.pdf-button:hover,
+.pdf-button:focus {
+    background-color: var(--pen-color-gray);
 }
 
 
@@ -211,5 +235,15 @@ body {
         width: 100%;
         max-width: 400px;
         margin-bottom: 10px;
+    }
+    .pdf-button-section {
+        padding: 15px; /* Ajustement du padding pour les petits écrans */
+    }
+
+    .pdf-button {
+        padding: 8px 16px; /* Réduction du padding pour les petits écrans */
+        font-size: 0.8em; /* Réduction de la taille de la police pour les petits écrans */
+        width: 100%; /* Assure que le bouton prend toute la largeur disponible */
+        box-sizing: border-box; /* Inclut le padding et la bordure dans la largeur totale */
     }
 }
