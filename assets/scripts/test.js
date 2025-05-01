@@ -1,9 +1,10 @@
 document.addEventListener("DOMContentLoaded", function() {
     const testProgress = {
-        irregularVerbs: 0, 
-        vocabulary: 0,     
-        grammar: 0          
+        irregularVerbs: 0,
+        vocabulary: 0,
+        grammar: 0
     };
+
     function updateProgressDisplay() {
         const irregularVerbsButton = document.getElementById('irregular-verbs');
         const vocabularyButton = document.getElementById('vocabulary');
@@ -12,14 +13,25 @@ document.addEventListener("DOMContentLoaded", function() {
         const irregularVerbsPercentage = document.getElementById('irregular-verbs-percentage');
         const vocabularyPercentage = document.getElementById('vocabulary-percentage');
         const grammarPercentage = document.getElementById('grammar-percentage');
+
+        console.log('irregularVerbsButton:', irregularVerbsButton);
+        console.log('vocabularyButton:', vocabularyButton);
+        console.log('grammarButton:', grammarButton);
+
+        console.log('irregularVerbsPercentage:', irregularVerbsPercentage);
+        console.log('vocabularyPercentage:', vocabularyPercentage);
+        console.log('grammarPercentage:', grammarPercentage);
+
         irregularVerbsPercentage.textContent = `${testProgress.irregularVerbs}%`;
         vocabularyPercentage.textContent = `${testProgress.vocabulary}%`;
         grammarPercentage.textContent = `${testProgress.grammar}%`;
-              updateButtonColor(irregularVerbsButton, testProgress.irregularVerbs);
+
+        updateButtonColor(irregularVerbsButton, testProgress.irregularVerbs);
         updateButtonColor(vocabularyButton, testProgress.vocabulary);
         updateButtonColor(grammarButton, testProgress.grammar);
     }
-      function updateButtonColor(button, percentage) {
+
+    function updateButtonColor(button, percentage) {
         if (percentage >= 100) {
             button.classList.add('completed');
             button.classList.remove('half-completed');
@@ -30,12 +42,13 @@ document.addEventListener("DOMContentLoaded", function() {
             button.classList.remove('half-completed', 'completed');
         }
     }
-     updateProgressDisplay();
-     function updateTestProgress(testName, percentage) {
+
+    updateProgressDisplay();
+
+    function updateTestProgress(testName, percentage) {
         if (testProgress.hasOwnProperty(testName)) {
             testProgress[testName] = percentage;
             updateProgressDisplay();
         }
     }
-   
 });

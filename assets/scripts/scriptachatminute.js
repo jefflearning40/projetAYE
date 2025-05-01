@@ -1,12 +1,8 @@
+let minutesAchetees = 25;
 
-    
-    let minutesAchetees = 25; 
-    
-    
-    function mettreAJourMinutes() {
-        document.getElementById('minutes-achetees').textContent = minutesAchetees;
-    }
-    
-   
-    mettreAJourMinutes();
-   
+function mettreAJourMinutes() {
+    console.log('Updating minutes:', minutesAchetees);
+    document.getElementById('minutes-achetees').textContent = minutesAchetees;
+}
+
+mettreAJourMinutes();

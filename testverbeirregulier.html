@@ -40,9 +40,14 @@
 
     <section class="pdf-button-section" role="region">
         <div class="button-container">
-            <a href="assets/pictures/docpdf/verbes_irreguliers.pdf" target="_blank" class="pdf-button">Verbes</a>
+            <a href="assets/fichierspdf/verbes_irreguliers.pdf" target="_blank" class="pdf-button" id="pdfButton">Verbes</a>
         </div>
     </section>
+    <!-- Conteneur pour l'iframe -->
+<div id="pdfContainer" class="pdf-container" style="display: none;">
+    <iframe id="pdfViewer" class="pdf-viewer"></iframe>
+    <button class="close-button">Fermer</button>
+</div>
 
     <footer class="footer">
         <div class="footer-content">
@@ -63,10 +68,13 @@
             <p id="popup-description">Les verbes irréguliers sont très importants à connaître, ils vous permettent de vous situer dans le temps. En cliquant sur le bouton Verbes, un tableau complet des verbes irréguliers les plus utilisés est consultable.</p>
         </div>
     </div>
-
+    
+     
     <script src="assets/scripts/script.js"></script>
     <script src="assets/scripts/scriptachatminute.js"></script>
     <script src="assets/scripts/visiomodal.js"></script>
     <script src="assets/scripts/test.js"></script>
+   
+   
 </body>
 </html>

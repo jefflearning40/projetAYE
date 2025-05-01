@@ -1,12 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
     const termsLabel = document.getElementById('terms-label');
     const termsPopup = document.getElementById('termsPopup');
-    const termsCloseBtn = termsPopup.querySelector('.close-btn'); // Sélecteur spécifique pour le popup des termes
+    const termsCloseBtn = termsPopup.querySelector('.close-btn'); 
     const openPdfBtn = document.getElementById('open-pdf-btn');
 
     const aboutPopup = document.getElementById('aboutPopup');
-    const aboutCloseBtn = aboutPopup.querySelector('.close-btn'); // Sélecteur spécifique pour le popup "à propos"
-
+    const aboutCloseBtn = aboutPopup.querySelector('.close-btn'); 
     if (!termsLabel || !termsPopup || !termsCloseBtn || !openPdfBtn || !aboutPopup || !aboutCloseBtn) {
         console.error('One or more elements not found in the DOM');
         return;
@@ -28,11 +27,11 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     openPdfBtn.addEventListener('click', function () {
-        window.open('assets/termes/rgpd.pdf', '_blank');
+        window.open('assets/fichierspdf/rgpd.pdf', '_blank');
     });
 
-    // Gestion du popup "à propos"
-    const openAboutBtn = document.getElementById('open-about-btn'); // Assurez-vous d'avoir un bouton pour ouvrir ce popup
+    
+    const openAboutBtn = document.getElementById('open-about-btn'); 
     if (openAboutBtn) {
         openAboutBtn.addEventListener('click', function () {
             aboutPopup.style.display = 'flex';
