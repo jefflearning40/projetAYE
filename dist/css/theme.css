@@ -518,7 +518,6 @@ body {
 
 .popup-content {
   background-color: var(--pen-color-white);
-  color: var(--pen-color-black); /* <-- Ajout de cette ligne */
   margin: auto;
   padding: 20px;
   border: 1px solid var(--pen-color-black);
@@ -527,6 +526,7 @@ body {
   position: relative;
   border-radius: 8px;
 }
+
 .close-btn {
   position: absolute;
   top: 10px;
@@ -770,7 +770,7 @@ body {
   padding: 15px 30px;
   font-size: 1em;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s;
+  transition: background-color 0.3s ease;
   text-decoration: none;
   border-radius: 10px;
 }
@@ -778,82 +778,6 @@ body {
 .pdf-button:hover,
 .pdf-button:focus {
   background-color: var(--pen-color-gray);
-  transform: scale(1.05); 
-}
-
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: var(--degrade-bg-color);
-  color: var(--pen-color-white);
-}
-
-.pdf-button-section {
-  text-align: center;
-  padding: 20px;
-  background: var(--degrade-bg-color);
-  color: var(--pen-color-white);
-}
-
-.pdf-button {
-  display: inline-block;
-  background-color: var(--pen-color-dark-blue);
-  color: var(--pen-color-white);
-  border: none;
-  padding: 15px 30px;
-  font-size: 1em;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s;
-  text-decoration: none;
-  border-radius: 10px;
-  text-align: center; /* <- Ajout */
-}
-
-.pdf-button:hover,
-.pdf-button:focus {
-  background-color: var(--pen-color-gray);
-  transform: scale(1.05); 
-}
-.return-button {
-  display: inline-block;
-  background-color: var(--pen-color-dark-blue);
-  color: var(--pen-color-white);
-  border: none;
-  padding: 15px 30px;
-  font-size: 1em;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s;
-  text-decoration: none;
-  border-radius: 10px;
-}
-.return-button:hover,
-.return-button:focus {
-  background-color: var(--pen-color-gray);
-  transform: scale(1.05);
-}
-.pdf-button,
-.return-button {
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-.button-container {
-  display: flex;
-  justify-content: space-between; 
-  width: 100%;
-  padding: 0 1rem; 
-}
-
-
-.pdf-button,
-.return-button {
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
 }
 
 @media (max-width: 768px) {
@@ -895,25 +819,4 @@ body {
     max-width: 400px;
     margin-bottom: 10px;
   }
-  .pdf-button {
-    padding: 10px 20px;
-    font-size: 0.875em; /* Réduisez la taille de la police */
-}
-
-.pdf-button-section {
-    padding: 10px; /* Réduisez le padding */
-}
-.pdf-container {
-  padding: 10px;
-}
-
-.pdf-viewer {
-  height: 70%;
-}
-
-.close-button {
-  width: 100%;
-  font-size: 1em;
-}
-
 }
