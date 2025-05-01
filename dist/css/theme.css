@@ -806,12 +806,54 @@ body {
   transition: background-color 0.3s ease, transform 0.2s;
   text-decoration: none;
   border-radius: 10px;
+  text-align: center; /* <- Ajout */
 }
 
 .pdf-button:hover,
 .pdf-button:focus {
   background-color: var(--pen-color-gray);
   transform: scale(1.05); 
+}
+.return-button {
+  display: inline-block;
+  background-color: var(--pen-color-dark-blue);
+  color: var(--pen-color-white);
+  border: none;
+  padding: 15px 30px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+  text-decoration: none;
+  border-radius: 10px;
+}
+.return-button:hover,
+.return-button:focus {
+  background-color: var(--pen-color-gray);
+  transform: scale(1.05);
+}
+.pdf-button,
+.return-button {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.button-container {
+  display: flex;
+  justify-content: space-between; 
+  width: 100%;
+  padding: 0 1rem; 
+}
+
+
+.pdf-button,
+.return-button {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 @media (max-width: 768px) {
