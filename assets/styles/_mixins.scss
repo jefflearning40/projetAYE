@@ -1,7 +1,7 @@
-// @mixin bgcolor($color) {
-//     background: $color !important;
-// }
+@mixin bgcolor($color) {
+    background: $color !important;
+}
 
-// body {
-//     @include bgcolor(pink);
-// }
+body {
+    @include bgcolor(pink);
+}

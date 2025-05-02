@@ -29,31 +29,41 @@
     <h1 id="banner-title" class="banner-title">Inscription</h1>
   </section>
   <div class="formulaire">
-    <form action="" aria-labelledby="form-title">
+    <form action="" aria-labelledby="form-title" novalidate>
       <h2 id="form-title">Formulaire d'inscription</h2>
+  
       <label for="nom">Nom</label>
       <input type="text" id="nom" name="nom" aria-required="true" />
-
+      <span class="error" id="error-nom"></span>
+  
       <label for="prenom">Prénom</label>
       <input type="text" id="prenom" name="prenom" aria-required="true" />
-
+      <span class="error" id="error-prenom"></span>
+  
       <label for="adresse">Adresse</label>
       <input type="text" id="adresse" name="adresse" aria-required="true" />
-
+      <span class="error" id="error-adresse"></span>
+  
       <label for="tel">Téléphone</label>
       <input type="tel" id="tel" name="tel" aria-required="true" />
-
+      <span class="error" id="error-tel"></span>
+  
       <label for="email">Adresse mail</label>
       <input type="email" id="email" name="email" aria-required="true" />
-
+      <span class="error" id="error-email"></span>
+  
       <div class="checkbox-container">
         <input type="checkbox" id="consentement" name="consentement" aria-describedby="terms-label" />
-        <label id="terms-label" for="consentement"><a href="#">J'accepte les termes et conditions</a></label>
-      </div>
-
+        <label id="terms-label" for="consentement">
+          <a href="#">J'accepte les termes et conditions</a>
+        </label>
+        <span class="error" id="error-consentement"></span>
+      </div>    
+  
       <button type="submit">S'inscrire</button>
     </form>
   </div>
+   </div>
   <footer class="footer">
     <div class="footer-content">
       <p>&copy; 2025 Afec Dax.</p>
@@ -89,5 +99,6 @@
   <script src="assets/scripts/scriptachatminute.js"></script>
   <script src="assets/scripts/visiomodal.js"></script>
   <script src="assets/scripts/termes.js"></script>
+  <script src="assets/scripts/errorform.js"></script>
 </body>
 </html>

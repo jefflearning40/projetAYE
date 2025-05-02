@@ -62,6 +62,10 @@ body {
   --pen-clear-white:rgba(255, 255, 255, 0.9);
 }
 
+body {
+  background: pink !important;
+}
+
 .navbar {
   position: fixed;
   top: 0;
@@ -819,4 +823,82 @@ body {
     max-width: 400px;
     margin-bottom: 10px;
   }
+}
+.formulaire input {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  box-sizing: border-box;
+}
+.formulaire input:invalid {
+  border-color: var(--pen-color-offline);
+}
+.formulaire .error {
+  color: var(--pen-color-offline);
+  font-size: 0.9em;
+  margin-top: 5px;
+  display: block;
+}
+.formulaire .checkbox-container {
+  margin-top: 15px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.formulaire .checkbox-container input[type=checkbox] {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+}
+.formulaire .checkbox-container input[type=checkbox] + label::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--pen-color-bleue);
+  border-radius: 3px;
+  vertical-align: middle;
+  margin-right: 5px;
+  background-color: white;
+  transition: background 0.2s ease;
+}
+.formulaire .checkbox-container input[type=checkbox]:checked + label::before {
+  content: "✔";
+  color: white;
+  background-color: var(--pen-color-bleue);
+  font-size: 16px;
+  text-align: center;
+  line-height: 18px;
+  font-weight: bold;
+}
+.formulaire .checkbox-container label {
+  cursor: pointer;
+  user-select: none;
+}
+.formulaire .checkbox-container label a {
+  text-decoration: none;
+  color: inherit;
+}
+.formulaire .checkbox-container .error {
+  display: block;
+  margin-left: 26px;
+  color: var(--pen-color-offline);
+  font-size: 0.9em;
+}
+.formulaire button {
+  margin-top: 20px;
+  padding: 10px 15px;
+  background-color: var(--pen-color-bleue);
+  color: var(--pen-color-white);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.formulaire button:hover {
+  background-color: var(--pen-color-bleue);
 }
