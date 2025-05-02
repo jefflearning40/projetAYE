@@ -1,7 +1,6 @@
 document.querySelector("form").addEventListener("submit", function (e) {
     let isValid = true;
 
-    // Réinitialiser tous les messages d'erreur
     document.querySelectorAll(".error").forEach(span => span.textContent = "");
     document.querySelectorAll("input").forEach(input => input.style.border = "");
 
@@ -51,3 +50,4 @@ document.querySelector("form").addEventListener("submit", function (e) {
       e.preventDefault(); // Empêche l'envoi du formulaire
     }
   });
+ 
