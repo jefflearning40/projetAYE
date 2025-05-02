@@ -162,7 +162,7 @@ body {
   border-radius: 5px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .nav-links {
     display: none;
     flex-direction: column;
@@ -215,7 +215,7 @@ body {
     padding: 12px;
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 599px) {
   .formulaire-contacte {
     padding: 10px;
     margin: 10px;
@@ -803,7 +803,7 @@ body {
   background-color: var(--pen-color-gray);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .teams-container {
     flex-direction: column;
     align-items: center;
