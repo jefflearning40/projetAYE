@@ -62,10 +62,6 @@ body {
   --pen-clear-white:rgba(255, 255, 255, 0.9);
 }
 
-body {
-  background: pink !important;
-}
-
 .navbar {
   position: fixed;
   top: 0;
