@@ -162,7 +162,7 @@ body {
   border-radius: 5px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .nav-links {
     display: none;
     flex-direction: column;
@@ -215,7 +215,7 @@ body {
     padding: 12px;
   }
 }
-@media (max-width: 599px) {
+@media (max-width: 600px) {
   .formulaire-contacte {
     padding: 10px;
     margin: 10px;
@@ -972,4 +972,3 @@ body {
   box-shadow: 0 0 0 2px rgba(0, 122, 204, 0.8);
   outline: none;
 }
-
