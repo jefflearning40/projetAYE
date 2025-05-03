@@ -490,6 +490,8 @@ body {
 .carousel {
   display: flex;
   transition: transform 0.5s ease-in-out;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
 }
 
 .carousel-item {
@@ -523,7 +525,21 @@ body {
   border-radius: 50%;
   z-index: 1;
 }
+@media screen and (max-width: 768px) {
+  .nav-btn {
+    display: none;
+  }
+}
 
+@media screen and (max-width: 768px) {
+  .carousel {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .carousel-item {
+    scroll-snap-align: center;
+  }
+}
 .popup {
   display: none;
   position: fixed;
