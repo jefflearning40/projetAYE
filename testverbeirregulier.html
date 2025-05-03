@@ -6,6 +6,7 @@
     <meta name="description" content="Site pour pratiquer l'anglais page test" />
     <title>Ace your Exam</title>
     <link rel="stylesheet" href="dist/css/theme.css" />
+    <link rel="stylesheet" href="dist/css/exercices.css" />
 </head>
 <body>
     <nav class="navbar" role="navigation" aria-label="Navigation principale">
@@ -41,11 +42,42 @@
     <section class="pdf-button-section" role="region">
         <div class="button-container">
           <a href="pagetest.html" class="return-button">⬅<br>retour</a>
-          <a href="assets/fichierspdf/verbes_irreguliers.pdf" target="_blank" class="pdf-button" id="pdfButton">verbe<br>Irreguliers</a>
+          <a href="assets/fichierspdf/verbes_irreguliers.pdf" target="_blank" class="pdf-button" id="pdfButton">verbe<br>Irréguliers</a>
+          <button class="exercise-button" id="exerciseButton">Exercice<br>QCM</button>
         </div>
-      </section>
+    </section>
 
+    <section class="exercise-section" role="region" aria-labelledby="exercise-title" id="exerciseSection" style="display:none;">
+        <h2 id="exercise-title">Testez vos connaissances !</h2>
+        <form id="quiz-form">
+            <div class="question">
+                <p>1. Quel est le prétérit du verbe "to be" (être) à la troisième personne du singulier ?</p>
+                <label><input type="radio" name="q1" value="is"> is</label><br>
+                <label><input type="radio" name="q1" value="are"> are</label><br>
+                <label><input type="radio" name="q1" value="was"> was</label><br>
+                <label><input type="radio" name="q1" value="were"> were</label><br>
+            </div>
 
+            <div class="question">
+                <p>2. Quel est le participe passé du verbe "to go" (aller) ?</p>
+                <label><input type="radio" name="q2" value="went"> went</label><br>
+                <label><input type="radio" name="q2" value="going"> going</label><br>
+                <label><input type="radio" name="q2" value="gone"> gone</label><br>
+                <label><input type="radio" name="q2" value="goes"> goes</label><br>
+            </div>
+
+            <div class="question">
+                <p>3. Quelle est la base verbale du verbe "drank" (bu) ?</p>
+                <label><input type="radio" name="q3" value="drink"> drink</label><br>
+                <label><input type="radio" name="q3" value="drank"> drank</label><br>
+                <label><input type="radio" name="q3" value="drunk"> drunk</label><br>
+                <label><input type="radio" name="q3" value="drinking"> drinking</label><br>
+            </div>
+
+            <button type="submit">Soumettre les réponses</button>
+        </form>
+        <div id="results"></div>
+    </section>
 
     <footer class="footer">
         <div class="footer-content">
@@ -58,7 +90,6 @@
         </div>
     </footer>
 
-    <!-- Popup about -->
     <div id="aboutPopup" class="popup" role="dialog" aria-labelledby="popup-title" aria-describedby="popup-description" aria-hidden="true">
         <div class="popup-content">
             <button class="close-btn" aria-label="Fermer le popup">&times;</button>
@@ -66,13 +97,11 @@
             <p id="popup-description">Les verbes irréguliers sont très importants à connaître, ils vous permettent de vous situer dans le temps. En cliquant sur le bouton Verbes, un tableau complet des verbes irréguliers les plus utilisés est consultable.</p>
         </div>
     </div>
-    
-     
+
     <script src="assets/scripts/script.js"></script>
     <script src="assets/scripts/scriptachatminute.js"></script>
     <script src="assets/scripts/visiomodal.js"></script>
     <script src="assets/scripts/test.js"></script>
-   
-   
+    <script src="assets/scripts/qcmverbesirreguliers.js"></script>
 </body>
 </html>

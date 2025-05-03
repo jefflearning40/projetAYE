@@ -776,11 +776,11 @@ body {
 }
 
 .category-button.half-completed {
-  background-color: var(--pen-color-yellow); /* Jaune */
+  background-color: var(--pen-color-yellow);
 }
 
 .category-button.completed {
-  background-color: var(--pen-color-green); /* Vert */
+  background-color: var(--pen-color-green); 
 }
 
 .category-button:hover,
@@ -800,22 +800,31 @@ body {
   color: var(--pen-color-white);
 }
 
-.pdf-button {
-  display: inline-block;
+.pdf-button,
+.return-button,
+.exercise-button {
   background-color: var(--pen-color-dark-blue);
   color: var(--pen-color-white);
-  border: none;
-  padding: 15px 30px;
-  font-size: 1em;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  padding: 10px 20px;
+  text-align: center;
   text-decoration: none;
-  border-radius: 10px;
+  display: inline-block;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  margin-left: 10px; 
 }
 
 .pdf-button:hover,
-.pdf-button:focus {
-  background-color: var(--pen-color-gray);
+.return-button:hover,
+.exercise-button:hover {
+  background-color: var(--pen-color-dark-blue); 
+}
+
+
+.pdf-button-section .button-container a,
+.pdf-button-section .button-container button {
+    line-height: 1.2;
 }
 
 @media (max-width: 768px) {
@@ -902,12 +911,12 @@ body {
   border-radius: 3px;
   vertical-align: middle;
   margin-right: 5px;
-  background-color: white;
+  background-color: var(--shadow-color-white);
   transition: background 0.2s ease;
 }
 .formulaire .checkbox-container input[type=checkbox]:checked + label::before {
   content: "✔";
-  color: white;
+  color: var(--shadow-color-white);
   background-color: var(--pen-color-bleue);
   font-size: 16px;
   text-align: center;
@@ -955,7 +964,7 @@ body {
 .hamburger {
   width: 50px;
   height: 50px;
-  background-color: #007acc;
+  background-color: var(--pen-color-bleue);
   border-radius: 50%;
   display: flex;
   flex-direction: column;
@@ -963,14 +972,14 @@ body {
   align-items: center;
   gap: 6px;
   border: none;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px var(--pen-clear-black)
   cursor: pointer;
   outline: none;
 }
 .hamburger span {
   width: 25px;
   height: 3px;
-  background: white;
+  background: var(--shadow-color-white);
   border-radius: 2px;
   transition: all 0.3s ease;
 }
@@ -984,6 +993,6 @@ body {
   transform: rotate(-45deg) translate(4px, -4px);
 }
 .hamburger:focus {
-  box-shadow: 0 0 0 2px rgba(0, 122, 204, 0.8);
+  box-shadow: 0 0 0 2px var(--shadow-color-blue);
   outline: none;
 }
