@@ -6,8 +6,7 @@
     <meta name="description" content="Site pour pratiquer l'anglais page test" />
     <title>Ace your Exam</title>
     <link rel="stylesheet" href="dist/css/theme.css" />
-    <link rel="stylesheet" href="dist/css/exercices.css" />
-</head>
+    </head>
 <body>
     <nav class="navbar" role="navigation" aria-label="Navigation principale">
         <div class="logo">
@@ -41,43 +40,100 @@
 
     <section class="pdf-button-section" role="region">
         <div class="button-container">
-          <a href="pagetest.html" class="return-button">⬅<br>retour</a>
-          <a href="assets/fichierspdf/verbes_irreguliers.pdf" target="_blank" class="pdf-button" id="pdfButton">verbe<br>Irréguliers</a>
-          <button class="exercise-button" id="exerciseButton">Exercice<br>QCM</button>
+            <a href="pagetest.html" class="pdf-button">⬅<br>retour</a>
+            <a href="assets/fichierspdf/verbes_irreguliers.pdf" target="_blank" class="pdf-button">verbe<br>Irréguliers</a>
+            <button class="exercise-button" id="exerciseButton">Exercice<br>QCM</button>
         </div>
     </section>
-
-    <section class="exercise-section" role="region" aria-labelledby="exercise-title" id="exerciseSection" style="display:none;">
-        <h2 id="exercise-title">Testez vos connaissances !</h2>
-        <form id="quiz-form">
-            <div class="question">
-                <p>1. Quel est le prétérit du verbe "to be" (être) à la troisième personne du singulier ?</p>
-                <label><input type="radio" name="q1" value="is"> is</label><br>
-                <label><input type="radio" name="q1" value="are"> are</label><br>
-                <label><input type="radio" name="q1" value="was"> was</label><br>
-                <label><input type="radio" name="q1" value="were"> were</label><br>
-            </div>
-
-            <div class="question">
-                <p>2. Quel est le participe passé du verbe "to go" (aller) ?</p>
-                <label><input type="radio" name="q2" value="went"> went</label><br>
-                <label><input type="radio" name="q2" value="going"> going</label><br>
-                <label><input type="radio" name="q2" value="gone"> gone</label><br>
-                <label><input type="radio" name="q2" value="goes"> goes</label><br>
-            </div>
-
-            <div class="question">
-                <p>3. Quelle est la base verbale du verbe "drank" (bu) ?</p>
-                <label><input type="radio" name="q3" value="drink"> drink</label><br>
-                <label><input type="radio" name="q3" value="drank"> drank</label><br>
-                <label><input type="radio" name="q3" value="drunk"> drunk</label><br>
-                <label><input type="radio" name="q3" value="drinking"> drinking</label><br>
-            </div>
-
-            <button type="submit">Soumettre les réponses</button>
+    <section id="qcmSection" style="display: none;">
+        <h2>QCM – Verbes irréguliers</h2>
+        <form id="qcmForm">
+          <div class="question">
+            <p>1. Quel est le prétérit de "go" ?</p>
+            <label><input type="radio" name="q1" value="goed">goed</label>
+            <label><input type="radio" name="q1" value="went">went</label>
+            <label><input type="radio" name="q1" value="goes">goes</label>
+          </div>
+      
+          <div class="question" style="display: none;">
+            <p>2. Quel est le participe passé de "eat" ?</p>
+            <label><input type="radio" name="q2" value="eated">eated</label>
+            <label><input type="radio" name="q2" value="eaten">eaten</label>
+            <label><input type="radio" name="q2" value="eating">eating</label>
+          </div>
+      
+          <div class="question" style="display: none;">
+            <p>3. Quel est le prétérit de "see" ?</p>
+            <label><input type="radio" name="q3" value="saw">saw</label>
+            <label><input type="radio" name="q3" value="seed">seed</label>
+            <label><input type="radio" name="q3" value="seeing">seeing</label>
+          </div>
+      
+          <div class="question" style="display: none;">
+            <p>4. Quel est le participe passé de "drink" ?</p>
+            <label><input type="radio" name="q4" value="drank">drank</label>
+            <label><input type="radio" name="q4" value="drunk">drunk</label>
+            <label><input type="radio" name="q4" value="drinking">drinking</label>
+          </div>
+      
+          <div class="question" style="display: none;">
+            <p>5. Quel est le prétérit de "take" ?</p>
+            <label><input type="radio" name="q5" value="took">took</label>
+            <label><input type="radio" name="q5" value="taken">taken</label>
+            <label><input type="radio" name="q5" value="taking">taking</label>
+          </div>
+      
+          <div class="question" style="display: none;">
+            <p>6. Quel est le participe passé de "speak" ?</p>
+            <label><input type="radio" name="q6" value="spoke">spoke</label>
+            <label><input type="radio" name="q6" value="spoken">spoken</label>
+            <label><input type="radio" name="q6" value="speaking">speaking</label>
+          </div>
+      
+          <div class="question" style="display: none;">
+            <p>7. Quel est le prétérit de "write" ?</p>
+            <label><input type="radio" name="q7" value="wrote">wrote</label>
+            <label><input type="radio" name="q7" value="written">written</label>
+            <label><input type="radio" name="q7" value="writing">writing</label>
+          </div>
+      
+          <div class="question" style="display: none;">
+            <p>8. Quel est le participe passé de "drive" ?</p>
+            <label><input type="radio" name="q8" value="drove">drove</label>
+            <label><input type="radio" name="q8" value="driven">driven</label>
+            <label><input type="radio" name="q8" value="driving">driving</label>
+          </div>
+      
+          <div class="question" style="display: none;">
+            <p>9. Quel est le prétérit de "come" ?</p>
+            <label><input type="radio" name="q9" value="came">came</label>
+            <label><input type="radio" name="q9" value="come">come</label>
+            <label><input type="radio" name="q9" value="coming">coming</label>
+          </div>
+      
+          <div class="question" style="display: none;">
+            <p>10. Quel est le participe passé de "be" ?</p>
+            <label><input type="radio" name="q10" value="was">was</label>
+            <label><input type="radio" name="q10" value="been">been</label>
+            <label><input type="radio" name="q10" value="being">being</label>
+          </div>
+      
+          <div class="qcm-controls">
+            <button type="button" id="nextQuestion">Suivant</button>
+            <span id="questionCounter">1/10</span>
+          </div>
         </form>
-        <div id="results"></div>
-    </section>
+      </section>
+      
+      <div id="scorePopup" class="popup" style="display: none;">
+        <div class="popup-content">
+          <span class="close-btn" onclick="closePopup()">&times;</span>
+          <h2>Votre résultat</h2>
+          <p id="finalScore"></p>
+        </div>
+      </div>
+      
+  
 
     <footer class="footer">
         <div class="footer-content">
@@ -102,6 +158,7 @@
     <script src="assets/scripts/scriptachatminute.js"></script>
     <script src="assets/scripts/visiomodal.js"></script>
     <script src="assets/scripts/test.js"></script>
-    <script src="assets/scripts/qcmverbesirreguliers.js"></script>
+    <script src="assets/scripts/qcmverbeirregulier.js"></script>
+   
 </body>
 </html>
