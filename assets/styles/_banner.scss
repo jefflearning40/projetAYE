@@ -1,4 +1,4 @@
-$banner-height: 300px; // tu peux ajuster ici la hauteur souhaitée
+$banner-height: 200px; // tu peux ajuster ici la hauteur souhaitée
 .banner {
     position: relative;
     text-align: center;
@@ -18,7 +18,7 @@ $banner-height: 300px; // tu peux ajuster ici la hauteur souhaitée
       left: 50%;
       transform: translate(-50%, -50%);
       font-size: 2.5em;
-      background-color: rgba(0, 0, 0, 0); // transparent mais personnalisable
+      background-color: rgba(0, 0, 0, 0); 
       padding: 10px;
       border-radius: 5px;
     }
