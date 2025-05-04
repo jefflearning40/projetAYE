@@ -14,14 +14,6 @@ document.addEventListener("DOMContentLoaded", function() {
         const vocabularyPercentage = document.getElementById('vocabulary-percentage');
         const grammarPercentage = document.getElementById('grammar-percentage');
 
-        console.log('irregularVerbsButton:', irregularVerbsButton);
-        console.log('vocabularyButton:', vocabularyButton);
-        console.log('grammarButton:', grammarButton);
-
-        console.log('irregularVerbsPercentage:', irregularVerbsPercentage);
-        console.log('vocabularyPercentage:', vocabularyPercentage);
-        console.log('grammarPercentage:', grammarPercentage);
-
         irregularVerbsPercentage.textContent = `${testProgress.irregularVerbs}%`;
         vocabularyPercentage.textContent = `${testProgress.vocabulary}%`;
         grammarPercentage.textContent = `${testProgress.grammar}%`;
@@ -43,12 +35,18 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    updateProgressDisplay();
-
     function updateTestProgress(testName, percentage) {
         if (testProgress.hasOwnProperty(testName)) {
             testProgress[testName] = percentage;
             updateProgressDisplay();
         }
     }
+
+    // Récupérer le score du localStorage pour les verbes irréguliers
+    const irregularVerbsScore = localStorage.getItem('irregularVerbsScore');
+    if (irregularVerbsScore !== null) {
+        updateTestProgress('irregularVerbs', parseFloat(irregularVerbsScore));
+    }
+
+    updateProgressDisplay();
 });
