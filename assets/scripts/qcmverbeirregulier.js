@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let score = 0;
     let nextButton;
     let prevButton;
+    let pauseButton;
 
     const verbesIrreguliers = [
         { infinitif: "abide", preterit: "abode", participe: "abode", traduction: "respecter, se conformer à" },
@@ -194,18 +195,44 @@ document.addEventListener('DOMContentLoaded', function() {
     ];
     
 
-    const fakeVerbesFrancais = ["manger", "boire", "courir", "écrire", "lire", "parler", "penser", "dormir", "jouer", "chanter"];
+    const fakeVerbesFrancais = [
+        "manger", "boire", "courir", "écrire", "lire", "parler", "penser", "dormir", "jouer", "chanter",
+        "danser", "nager", "sauter", "marcher", "regarder", "écouter", "cuisiner", "voyager", "dessiner",
+        "peindre", "jardiner", "nettoyer", "laver", "repasser", "coudre", "tricoter", "skier", "surfer",
+        "pêcher", "camper", "randonner", "escalader", "plonger", "voler", "conduire", "naviguer", "explorer"
+    ];
+
+    // Génération des questions à l'avance
+    const allQuestions = verbesIrreguliers.flatMap((verbe) => [
+        {
+            question: `Quel est le prétérit de "${verbe.infinitif}" (${verbe.traduction}) ?`,
+            options: [verbe.preterit, verbe.infinitif, verbe.participe],
+            correctAnswer: verbe.preterit
+        },
+        {
+            question: `Quel est le participe passé de "${verbe.infinitif}" (${verbe.traduction}) ?`,
+            options: [verbe.participe, verbe.infinitif, verbe.preterit],
+            correctAnswer: verbe.participe
+        },
+        {
+            question: `Quelle est la traduction de "${verbe.infinitif}" ?`,
+            options: [verbe.traduction, ...getRandomFakeVerbes(2)],
+            correctAnswer: verbe.traduction
+        }
+    ]);
 
     exerciseButton.addEventListener('click', function() {
         console.log("Exercise button clicked");
+
+        // Réinitialiser le score dans localStorage
+        localStorage.setItem('irregularVerbsScore', '0.00');
+
         if (qcmSection.style.display === 'none' || qcmSection.style.display === '') {
-            questions = []; // Réinitialise les questions
-            currentQuestionIndex = 0; // Réinitialise l'index
-            score = 0; // Réinitialise le score
-            generateQuestions(100); // Génère 100 questions
-            console.log("Questions generated:", questions);
+            questions = getRandomQuestions(allQuestions, 100); // Sélectionner 100 questions aléatoires
+            currentQuestionIndex = 0; // Réinitialiser l'index
+            score = 0; // Réinitialiser le score
             displayQuestion(currentQuestionIndex);
-            addNavigationButtons(); // Ajoute les boutons de navigation une seule fois
+            addNavigationButtons(); // Ajouter les boutons de navigation une seule fois
             qcmSection.style.display = 'block';
             console.log("QCM section displayed");
         } else {
@@ -214,40 +241,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    function generateQuestions(numQuestions) {
-        const allQuestions = [];
-
-        verbesIrreguliers.forEach((verbe) => {
-            // Ajouter des questions sur le prétérit et le participe passé
-            allQuestions.push({
-                question: `Quel est le prétérit de "${verbe.infinitif}" (${verbe.traduction}) ?`,
-                options: [verbe.preterit, verbe.infinitif, verbe.participe],
-                correctAnswer: verbe.preterit
-            });
-
-            allQuestions.push({
-                question: `Quel est le participe passé de "${verbe.infinitif}" (${verbe.traduction}) ?`,
-                options: [verbe.participe, verbe.infinitif, verbe.preterit],
-                correctAnswer: verbe.participe
-            });
-
-            // Ajouter des questions sur la traduction avec des fausses réponses en français
-            const fakeOptions = getRandomFakeVerbes(2);
-            allQuestions.push({
-                question: `Quelle est la traduction de "${verbe.infinitif}" ?`,
-                options: [verbe.traduction, ...fakeOptions],
-                correctAnswer: verbe.traduction
-            });
-        });
-
-        // Sélectionner un sous-ensemble aléatoire de questions
-        const selectedQuestions = [];
-        while (selectedQuestions.length < numQuestions && allQuestions.length > 0) {
-            const randomIndex = Math.floor(Math.random() * allQuestions.length);
-            selectedQuestions.push(allQuestions.splice(randomIndex, 1)[0]);
-        }
-
-        questions = selectedQuestions;
+    function getRandomQuestions(questions, numQuestions) {
+        const shuffled = questions.sort(() => 0.5 - Math.random());
+        return shuffled.slice(0, numQuestions);
     }
 
     function getRandomFakeVerbes(num) {
@@ -257,7 +253,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function displayQuestion(index) {
         console.log("Displaying question:", index);
-        qcmContent.innerHTML = ''; // Efface le contenu précédent
+        qcmContent.innerHTML = ''; // Effacer le contenu précédent
 
         const questionData = questions[index];
         const questionText = document.createElement('p');
@@ -293,7 +289,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function addNavigationButtons() {
-        // Vérifie si les boutons existent déjà
+        // Vérifier si les boutons existent déjà
         if (!document.getElementById('prevButton') && !document.getElementById('nextButton')) {
             const navContainer = document.createElement('div');
             navContainer.classList.add('qcm-navigation');
@@ -301,6 +297,7 @@ document.addEventListener('DOMContentLoaded', function() {
             prevButton = document.createElement('button');
             prevButton.id = 'prevButton';
             prevButton.textContent = 'Précédent';
+            prevButton.classList.add('app-button'); // Utilisez la classe CSS pour le style
             prevButton.addEventListener('click', function() {
                 console.log("Previous button clicked");
                 if (currentQuestionIndex > 0) {
@@ -314,12 +311,27 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
 
+            pauseButton = document.createElement('button');
+            pauseButton.id = 'pauseButton';
+            pauseButton.textContent = 'Pause';
+            pauseButton.classList.add('app-button'); // Utilisez la classe CSS pour le style
+            pauseButton.addEventListener('click', function() {
+                console.log("Pause button clicked");
+                // Enregistrer le score actuel dans localStorage
+                const percentage = (score / questions.length) * 100;
+                localStorage.setItem('irregularVerbsScore', percentage.toFixed(2));
+                // Rediriger vers pagetest.html
+                window.location.href = 'pagetest.html';
+            });
+
             nextButton = document.createElement('button');
             nextButton.id = 'nextButton';
             nextButton.textContent = 'Suivant';
+            nextButton.classList.add('app-button'); // Utilisez la classe CSS pour le style
             nextButton.addEventListener('click', handleNextButtonClick);
 
             navContainer.appendChild(prevButton);
+            navContainer.appendChild(pauseButton);
             navContainer.appendChild(nextButton);
             qcmSection.appendChild(navContainer);
         }
@@ -347,6 +359,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Masquer les boutons de navigation
         prevButton.style.display = 'none';
         nextButton.style.display = 'none';
+        pauseButton.style.display = 'none';
 
         // Ajouter le bouton retour
         const returnButton = document.createElement('button');
@@ -354,7 +367,7 @@ document.addEventListener('DOMContentLoaded', function() {
         returnButton.textContent = 'Retour';
         returnButton.classList.add('app-button'); // Utilisez la classe CSS pour le style
         returnButton.addEventListener('click', function() {
-            window.location.href = 'pagetest.html'; // Redirige vers pagetest.html
+            window.location.href = 'pagetest.html'; // Rediriger vers pagetest.html
         });
 
         qcmContent.appendChild(returnButton);
