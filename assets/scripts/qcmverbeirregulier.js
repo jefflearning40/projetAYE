@@ -10,6 +10,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let currentQuestionIndex = 0;
     let questions = [];
+    let score = 0;
+    let nextButton;
+    let prevButton;
 
     const verbesIrreguliers = [
         { infinitif: "go", preterit: "went", participe: "gone", traduction: "aller" },
@@ -29,6 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (qcmSection.style.display === 'none' || qcmSection.style.display === '') {
             questions = []; // Réinitialise les questions
             currentQuestionIndex = 0; // Réinitialise l'index
+            score = 0; // Réinitialise le score
             generateQuestions();
             console.log("Questions generated:", questions);
             displayQuestion(currentQuestionIndex);
@@ -45,14 +49,27 @@ document.addEventListener('DOMContentLoaded', function() {
         const selectedVerbes = getRandomVerbes(verbesIrreguliers, 10);
 
         selectedVerbes.forEach((verbe, index) => {
-            const options = [verbe.preterit, 'fake1', 'fake2']; // Remplacez 'fake1' et 'fake2' par des fausses réponses
-            options.sort(() => Math.random() - 0.5); // Mélange les options
+            const questionType = Math.random() < 0.5 ? 'preterit' : 'participe'; // Alterne entre prétérit et participe
+            const options = [];
 
-            questions.push({
-                question: `Question ${index + 1} : Quel est le prétérit de "${verbe.infinitif}" (${verbe.traduction}) ?`,
-                options: options,
-                correctAnswer: verbe.preterit
-            });
+            if (questionType === 'preterit') {
+                options.push(verbe.preterit, verbe.infinitif, verbe.participe);
+                questions.push({
+                    question: `Question ${index + 1} : Quel est le prétérit de "${verbe.infinitif}" (${verbe.traduction}) ?`,
+                    options: options,
+                    correctAnswer: verbe.preterit
+                });
+            } else {
+                options.push(verbe.participe, verbe.infinitif, verbe.preterit);
+                questions.push({
+                    question: `Question ${index + 1} : Quel est le participe passé de "${verbe.infinitif}" (${verbe.traduction}) ?`,
+                    options: options,
+                    correctAnswer: verbe.participe
+                });
+            }
+
+            // Mélanger les options
+            options.sort(() => Math.random() - 0.5);
         });
     }
 
@@ -74,6 +91,11 @@ document.addEventListener('DOMContentLoaded', function() {
             radioButton.type = 'radio';
             radioButton.name = `q${index + 1}`;
             radioButton.value = option;
+            radioButton.addEventListener('change', function() {
+                if (radioButton.value === questionData.correctAnswer) {
+                    score++;
+                }
+            });
 
             const label = document.createElement('label');
             label.textContent = option;
@@ -84,6 +106,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         qcmContent.insertBefore(questionText, qcmContent.firstChild);
+
+        // Afficher le compteur de questions
+        const questionCounter = document.createElement('p');
+        questionCounter.textContent = `Question ${index + 1}/${questions.length}`;
+        qcmContent.appendChild(questionCounter);
     }
 
     function addNavigationButtons() {
@@ -92,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const navContainer = document.createElement('div');
             navContainer.classList.add('qcm-navigation');
 
-            const prevButton = document.createElement('button');
+            prevButton = document.createElement('button');
             prevButton.id = 'prevButton';
             prevButton.textContent = 'Précédent';
             prevButton.addEventListener('click', function() {
@@ -100,25 +127,61 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (currentQuestionIndex > 0) {
                     currentQuestionIndex--;
                     displayQuestion(currentQuestionIndex);
+                    if (currentQuestionIndex < questions.length - 1) {
+                        nextButton.textContent = 'Suivant';
+                        nextButton.removeEventListener('click', showScore);
+                        nextButton.addEventListener('click', handleNextButtonClick);
+                    }
                 }
             });
 
-            const nextButton = document.createElement('button');
+            nextButton = document.createElement('button');
             nextButton.id = 'nextButton';
             nextButton.textContent = 'Suivant';
-            nextButton.addEventListener('click', function() {
-                console.log("Next button clicked");
-                if (currentQuestionIndex < questions.length - 1) {
-                    currentQuestionIndex++;
-                    displayQuestion(currentQuestionIndex);
-                } else {
-                    console.log("No more questions");
-                }
-            });
+            nextButton.addEventListener('click', handleNextButtonClick);
 
             navContainer.appendChild(prevButton);
             navContainer.appendChild(nextButton);
             qcmSection.appendChild(navContainer);
         }
+    }
+
+    function handleNextButtonClick() {
+        console.log("Next button clicked");
+        if (currentQuestionIndex < questions.length - 1) {
+            currentQuestionIndex++;
+            displayQuestion(currentQuestionIndex);
+        } else {
+            nextButton.textContent = 'Terminé';
+            nextButton.removeEventListener('click', handleNextButtonClick);
+            nextButton.addEventListener('click', showScore);
+        }
+    }
+
+    function showScore() {
+        const scoreOutOfTen = score;
+        qcmContent.innerHTML = `
+            <h2>Votre Score</h2>
+            <p>Vous avez obtenu ${scoreOutOfTen} sur 10.</p>
+        `;
+
+        // Masquer les boutons de navigation
+        prevButton.style.display = 'none';
+        nextButton.style.display = 'none';
+
+        // Ajouter le bouton retour
+        const returnButton = document.createElement('button');
+        returnButton.id = 'returnButton';
+        returnButton.textContent = 'Retour';
+        returnButton.classList.add('app-button'); // Utilisez la classe CSS pour le style
+        returnButton.addEventListener('click', function() {
+            window.location.href = 'pagetest.html'; // Redirige vers pagetest.html
+        });
+
+        qcmContent.appendChild(returnButton);
+
+        // Enregistrer le score dans le localStorage
+        const percentage = (scoreOutOfTen / questions.length) * 100;
+        localStorage.setItem('irregularVerbsScore', percentage.toFixed(2));
     }
 });
