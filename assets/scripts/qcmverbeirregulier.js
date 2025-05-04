@@ -25,7 +25,10 @@ document.addEventListener('DOMContentLoaded', function() {
         { infinitif: "take", preterit: "took", participe: "taken", traduction: "prendre" },
         { infinitif: "see", preterit: "saw", participe: "seen", traduction: "voir" },
         { infinitif: "come", preterit: "came", participe: "come", traduction: "venir" },
+        // Ajoutez plus de verbes ici si nécessaire
     ];
+
+    const fakeVerbesFrancais = ["manger", "boire", "courir", "écrire", "lire", "parler", "penser", "dormir", "jouer", "chanter"];
 
     exerciseButton.addEventListener('click', function() {
         console.log("Exercise button clicked");
@@ -33,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
             questions = []; // Réinitialise les questions
             currentQuestionIndex = 0; // Réinitialise l'index
             score = 0; // Réinitialise le score
-            generateQuestions();
+            generateQuestions(100); // Génère 100 questions
             console.log("Questions generated:", questions);
             displayQuestion(currentQuestionIndex);
             addNavigationButtons(); // Ajoute les boutons de navigation une seule fois
@@ -45,36 +48,44 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    function generateQuestions() {
-        const selectedVerbes = getRandomVerbes(verbesIrreguliers, 10);
+    function generateQuestions(numQuestions) {
+        const allQuestions = [];
 
-        selectedVerbes.forEach((verbe, index) => {
-            const questionType = Math.random() < 0.5 ? 'preterit' : 'participe'; // Alterne entre prétérit et participe
-            const options = [];
+        verbesIrreguliers.forEach((verbe) => {
+            // Ajouter des questions sur le prétérit et le participe passé
+            allQuestions.push({
+                question: `Quel est le prétérit de "${verbe.infinitif}" (${verbe.traduction}) ?`,
+                options: [verbe.preterit, verbe.infinitif, verbe.participe],
+                correctAnswer: verbe.preterit
+            });
 
-            if (questionType === 'preterit') {
-                options.push(verbe.preterit, verbe.infinitif, verbe.participe);
-                questions.push({
-                    question: `Question ${index + 1} : Quel est le prétérit de "${verbe.infinitif}" (${verbe.traduction}) ?`,
-                    options: options,
-                    correctAnswer: verbe.preterit
-                });
-            } else {
-                options.push(verbe.participe, verbe.infinitif, verbe.preterit);
-                questions.push({
-                    question: `Question ${index + 1} : Quel est le participe passé de "${verbe.infinitif}" (${verbe.traduction}) ?`,
-                    options: options,
-                    correctAnswer: verbe.participe
-                });
-            }
+            allQuestions.push({
+                question: `Quel est le participe passé de "${verbe.infinitif}" (${verbe.traduction}) ?`,
+                options: [verbe.participe, verbe.infinitif, verbe.preterit],
+                correctAnswer: verbe.participe
+            });
 
-            // Mélanger les options
-            options.sort(() => Math.random() - 0.5);
+            // Ajouter des questions sur la traduction avec des fausses réponses en français
+            const fakeOptions = getRandomFakeVerbes(2);
+            allQuestions.push({
+                question: `Quelle est la traduction de "${verbe.infinitif}" ?`,
+                options: [verbe.traduction, ...fakeOptions],
+                correctAnswer: verbe.traduction
+            });
         });
+
+        // Sélectionner un sous-ensemble aléatoire de questions
+        const selectedQuestions = [];
+        while (selectedQuestions.length < numQuestions && allQuestions.length > 0) {
+            const randomIndex = Math.floor(Math.random() * allQuestions.length);
+            selectedQuestions.push(allQuestions.splice(randomIndex, 1)[0]);
+        }
+
+        questions = selectedQuestions;
     }
 
-    function getRandomVerbes(array, num) {
-        const shuffled = array.sort(() => 0.5 - Math.random());
+    function getRandomFakeVerbes(num) {
+        const shuffled = fakeVerbesFrancais.sort(() => 0.5 - Math.random());
         return shuffled.slice(0, num);
     }
 
@@ -85,6 +96,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const questionData = questions[index];
         const questionText = document.createElement('p');
         questionText.textContent = questionData.question;
+
+        questionData.options.sort(() => Math.random() - 0.5); // Mélanger les options
 
         questionData.options.forEach(option => {
             const radioButton = document.createElement('input');
@@ -162,7 +175,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const scoreOutOfTen = score;
         qcmContent.innerHTML = `
             <h2>Votre Score</h2>
-            <p>Vous avez obtenu ${scoreOutOfTen} sur 10.</p>
+            <p>Vous avez obtenu ${scoreOutOfTen} sur ${questions.length}.</p>
         `;
 
         // Masquer les boutons de navigation
