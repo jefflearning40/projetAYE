@@ -22,16 +22,16 @@
             <span></span>
         </div>
     </nav>
-    
+
     <section class="banner" role="banner">
         <img src="assets/pictures/bgpicture/bg-banner.jpg" alt="Bannière" class="banner-image" />
         <h1 class="banner-title">Les tests</h1>
     </section>
-    
+
     <section class="menu" role="region" aria-labelledby="menu-title">
         <h2 id="menu-title">De A0 a C2</h2>
         <p>Connaissez vous votre niveau?</p>
-        
+
         <div class="img-container">
             <div class=""></div>
         </div>
@@ -59,8 +59,7 @@
             </div>
         </div>
     </section>
-    
-    
+
     <footer class="footer">
         <div class="footer-content">
             <p>&copy; 2025 fil rouge de la formation.</p>
@@ -71,7 +70,7 @@
             </ul>
         </div>
     </footer>
-    
+
     <!-- Popup about -->
     <div id="aboutPopup" class="popup" role="dialog" aria-labelledby="popup-title" aria-describedby="popup-description" aria-hidden="true">
         <div class="popup-content">
@@ -80,6 +79,17 @@
             <p id="popup-description">Ce test determine votre niveau de A1 a C2 pour que votre interloculteur anglophone puisse mieux vous connaitre et s'adapter tant dans la rapidite que dans le vocabulaire ce qui lui permettra de vous attribuer une note plus reelle</p>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const irregularVerbsPercentage = document.getElementById('irregular-verbs-percentage');
+            const savedScore = localStorage.getItem('irregularVerbsScore');
+
+            if (savedScore) {
+                irregularVerbsPercentage.textContent = `${savedScore}%`;
+            }
+        });
+    </script>
 
     <script src="assets/scripts/script.js"></script>
     <script src="assets/scripts/scriptachatminute.js"></script>

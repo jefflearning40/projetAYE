@@ -15,6 +15,15 @@ document.addEventListener('DOMContentLoaded', function() {
     let prevButton;
     let pauseButton;
 
+    // Charger l'état précédent depuis localStorage
+    const savedState = localStorage.getItem('qcmState');
+    if (savedState) {
+        const { index, savedScore } = JSON.parse(savedState);
+        currentQuestionIndex = index;
+        score = savedScore;
+    }
+    
+
     const verbesIrreguliers = [
         { infinitif: "abide", preterit: "abode", participe: "abode", traduction: "respecter, se conformer à" },
         { infinitif: "arise", preterit: "arose", participe: "arisen", traduction: "survenir" },
@@ -193,7 +202,6 @@ document.addEventListener('DOMContentLoaded', function() {
         { infinitif: "wring", preterit: "wrung", participe: "wrung", traduction: "tordre" },
         { infinitif: "write", preterit: "wrote", participe: "written", traduction: "écrire" }
     ];
-    
 
     const fakeVerbesFrancais = [
         "manger", "boire", "courir", "écrire", "lire", "parler", "penser", "dormir", "jouer", "chanter",
@@ -221,7 +229,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     ]);
 
-    exerciseButton.addEventListener('click', function() {
+      exerciseButton.addEventListener('click', function() {
         console.log("Exercise button clicked");
 
         // Réinitialiser le score dans localStorage
@@ -229,8 +237,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (qcmSection.style.display === 'none' || qcmSection.style.display === '') {
             questions = getRandomQuestions(allQuestions, 100); // Sélectionner 100 questions aléatoires
-            currentQuestionIndex = 0; // Réinitialiser l'index
-            score = 0; // Réinitialiser le score
             displayQuestion(currentQuestionIndex);
             addNavigationButtons(); // Ajouter les boutons de navigation une seule fois
             qcmSection.style.display = 'block';
@@ -267,9 +273,7 @@ document.addEventListener('DOMContentLoaded', function() {
             radioButton.name = `q${index + 1}`;
             radioButton.value = option;
             radioButton.addEventListener('change', function() {
-                if (radioButton.value === questionData.correctAnswer) {
-                    score++;
-                }
+                checkAnswer(radioButton.value, questionData);
             });
 
             const label = document.createElement('label');
@@ -288,6 +292,17 @@ document.addEventListener('DOMContentLoaded', function() {
         qcmContent.appendChild(questionCounter);
     }
 
+    function checkAnswer(selectedOption, questionData) {
+        if (selectedOption === questionData.correctAnswer) {
+            playSuccessSound();
+            showSuccessFeedback();
+            score++;
+        } else {
+            playErrorSound();
+            showErrorFeedback();
+        }
+    }
+
     function addNavigationButtons() {
         // Vérifier si les boutons existent déjà
         if (!document.getElementById('prevButton') && !document.getElementById('nextButton')) {
@@ -297,7 +312,7 @@ document.addEventListener('DOMContentLoaded', function() {
             prevButton = document.createElement('button');
             prevButton.id = 'prevButton';
             prevButton.textContent = 'Précédent';
-            prevButton.classList.add('app-button'); // Utilisez la classe CSS pour le style
+            prevButton.classList.add('app-button');
             prevButton.addEventListener('click', function() {
                 console.log("Previous button clicked");
                 if (currentQuestionIndex > 0) {
@@ -314,12 +329,20 @@ document.addEventListener('DOMContentLoaded', function() {
             pauseButton = document.createElement('button');
             pauseButton.id = 'pauseButton';
             pauseButton.textContent = 'Pause';
-            pauseButton.classList.add('app-button'); // Utilisez la classe CSS pour le style
+            pauseButton.classList.add('app-button');
             pauseButton.addEventListener('click', function() {
                 console.log("Pause button clicked");
-                // Enregistrer le score actuel dans localStorage
+                // Enregistrer l'état actuel dans localStorage
+                const state = {
+                    index: currentQuestionIndex,
+                    savedScore: score
+                };
+                localStorage.setItem('qcmState', JSON.stringify(state));
+
+                // Calculer et enregistrer le pourcentage
                 const percentage = (score / questions.length) * 100;
                 localStorage.setItem('irregularVerbsScore', percentage.toFixed(2));
+
                 // Rediriger vers pagetest.html
                 window.location.href = 'pagetest.html';
             });
@@ -327,7 +350,7 @@ document.addEventListener('DOMContentLoaded', function() {
             nextButton = document.createElement('button');
             nextButton.id = 'nextButton';
             nextButton.textContent = 'Suivant';
-            nextButton.classList.add('app-button'); // Utilisez la classe CSS pour le style
+            nextButton.classList.add('app-button');
             nextButton.addEventListener('click', handleNextButtonClick);
 
             navContainer.appendChild(prevButton);
@@ -365,7 +388,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const returnButton = document.createElement('button');
         returnButton.id = 'returnButton';
         returnButton.textContent = 'Retour';
-        returnButton.classList.add('app-button'); // Utilisez la classe CSS pour le style
+        returnButton.classList.add('app-button');
         returnButton.addEventListener('click', function() {
             window.location.href = 'pagetest.html'; // Rediriger vers pagetest.html
         });
@@ -375,5 +398,46 @@ document.addEventListener('DOMContentLoaded', function() {
         // Enregistrer le score dans le localStorage
         const percentage = (scoreOutOfTen / questions.length) * 100;
         localStorage.setItem('irregularVerbsScore', percentage.toFixed(2));
+
+        // Jouer les applaudissements si le score est de 100%
+        if (percentage === 100) {
+            playApplauseSound();
+        }
+    }
+
+    function playErrorSound() {
+        const errorSound = new Audio('assets/sounds/rire1.mp3');
+        errorSound.play().catch(e => console.error("Error playing error sound:", e));
+    }
+
+    function playSuccessSound() {
+        const successSound = new Audio('assets/sounds/ding.mp3');
+        successSound.play().catch(e => console.error("Error playing success sound:", e));
+    }
+
+    function playApplauseSound() {
+        const applauseSound = new Audio('assets/sounds/applause.mp3');
+        applauseSound.play().catch(e => console.error("Error playing applause sound:", e));
+    }
+      function playPauseSound() {
+        console.log("Playing pause sound"); // Ajout d'un log pour vérifier si la fonction est appelée
+        const pauseSound = new Audio('assets/sounds/arigato.mp3');
+        pauseSound.play().catch(e => console.error("Error playing pause sound:", e));
+    }
+
+    function showErrorFeedback() {
+        const feedbackElement = document.getElementById('visualFeedback');
+        feedbackElement.style.backgroundColor = 'red';
+        setTimeout(() => {
+            feedbackElement.style.backgroundColor = 'transparent';
+        }, 1000);
+    }
+
+    function showSuccessFeedback() {
+        const feedbackElement = document.getElementById('visualFeedback');
+        feedbackElement.style.backgroundColor = 'green';
+        setTimeout(() => {
+            feedbackElement.style.backgroundColor = 'transparent';
+        }, 1000);
     }
 });
