@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Site pour pratiquer l'anglais" />
+    <meta name="description" content="Site pour pratiquer l'anglais page test" />
     <title>Ace your Exam</title>
     <link rel="stylesheet" href="style.css" />
 </head>
@@ -11,7 +11,7 @@
     <nav class="navbar" role="navigation" aria-label="Navigation principale">
         <div class="logo"><img src="assets/pictures/iconplaces/logositenglish.jpeg" alt="Logo Ace your Exam"></div>
         <ul class="nav-links">
-            <li><a href="#">Accueil</a></li>
+            <li><a href="index.html">Accueil</a></li>
             <li><a href="#">À propos</a></li>
             <li><a href="formulaire.html">Inscription</a></li>
             <li><a href="login.html">Connexion</a></li>
@@ -29,35 +29,34 @@
     </section>
     
     <section class="menu" role="region" aria-labelledby="menu-title">
-        <h2 id="menu-title">Apprenez en pratiquant</h2>
-        <p>Venez visiter le salon des anglophones</p>
+        <h2 id="menu-title">De A0 a C2</h2>
+        <p>Connaissez vous votre niveau?</p>
         
         <div class="img-container">
-            <a href="pagetest.html">
-                <img src="assets/pictures/menupicture/Capture d’écran 2025-04-19 142659.jpg" alt="Tester votre niveau">
-                <p>Tester votre niveau</p>
-            </a>
+            <div class=""></div>
         </div>
-        
-        <div class="img-container">
-            <a href="pagevisio.html">
-                <img src="assets/pictures/menupicture/imgvisio.jpg" alt="Bienvenue dans le salon">
-                <p>Bienvenue dans le salon</p>
-            </a>
-        </div>
-        
-        <div class="img-container">
-            <a href="library.html">
-                <img src="assets/pictures/menupicture/imgdoc1.jpg" alt="Bibliothèque">
-                <p>Bibliothèque</p>
-            </a>
-        </div>
-        
-        <div class="img-container">
-            <a href="lien_vers_page_4.html">
-                <img src="assets/pictures/menupicture/graphics.jpg" alt="Votre progression">
-                <p>Votre progression</p>
-            </a>
+    </section>
+    <section class="buttons-section" role="region" aria-labelledby="buttons-title">
+        <h2 id="buttons-title">Choisissez une catégorie</h2>
+        <div class="buttons-container">
+            <div class="button-group">
+                <a href="testverbeirregulier.html">
+                    <button class="category-button" id="irregular-verbs">Verbes irréguliers</button>
+                </a>
+                <span class="percentage" id="irregular-verbs-percentage">0%</span>
+            </div>
+            <div class="button-group">
+                <a href="testvocabulaire.html">
+                    <button class="category-button" id="vocabulary">Vocabulaire</button>
+                </a>
+                <span class="percentage" id="vocabulary-percentage">0%</span>
+            </div>
+            <div class="button-group">
+                <a href="testgrammaire.html">
+                    <button class="category-button" id="grammar">Grammaire</button>
+                </a>
+                <span class="percentage" id="grammar-percentage">0%</span>
+            </div>
         </div>
     </section>
     
@@ -76,13 +75,14 @@
     <div id="aboutPopup" class="popup" role="dialog" aria-labelledby="popup-title" aria-describedby="popup-description" aria-hidden="true">
         <div class="popup-content">
             <span class="close-btn" aria-label="Fermer le popup">&times;</span>
-            <h2 id="popup-title">À propos du site Ace Your Exam</h2>
-            <p id="popup-description">Si vous cherchez des personnes anglophones pour pratiquer votre anglais sans vous ruiner financièrement, vous êtes au bon endroit. Nos intervenants anglophones issus de tous les pays du Commonwealth et des étudiants en langues étrangères sont présents pour vous entraîner afin que vous soyez prêts à passer l'examen CLOE ou TOEIC.</p>
+            <h2 id="popup-title">pourquoi un test?</h2>
+            <p id="popup-description">Ce test determine votre niveau de A1 a C2 pour que votre interloculteur anglophone puisse mieux vous connaitre et s'adapter tant dans la rapidite que dans le vocabulaire ce qui lui permettra de vous attribuer une note plus reelle</p>
         </div>
     </div>
 
     <script src="assets/scripts/script.js"></script>
     <script src="assets/scripts/scriptachatminute.js"></script>
     <script src="assets/scripts/visiomodal.js"></script>
+    <script src="assets/scripts/test.js"></script>
 </body>
 </html>

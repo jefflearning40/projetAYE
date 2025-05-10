@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Site pour pratiquer l'anglais page connection" />
+    <title>Ace your Exam</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <nav class="navbar" role="navigation" aria-label="Navigation principale">
+        <div class="logo">
+            <img src="assets/pictures/iconplaces/logositenglish.jpeg" alt="Logo Ace your Exam">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="#">À propos</a></li>
+            <li><a href="formulaire.html">Inscription</a></li>
+            <li><a href="#" aria-current="page">Connexion</a></li>
+        </ul>
+        <button class="hamburger" aria-label="Menu hamburger" aria-expanded="false" aria-controls="nav-links">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <section class="banner" role="banner" aria-labelledby="banner-title">
+        <img src="assets/pictures/bgpicture/bg-banner.jpg" alt="Bannière" class="banner-image" />
+        <h1 id="banner-title" class="banner-title">Connexion</h1>
+    </section>
+    <main>
+        <div class="login">
+            <div class="login-screen">
+                <div class="app-title">
+                    <h1>Bienvenue</h1>
+                </div>
+
+                <form class="login-form" id="login-form" aria-labelledby="login-form-title">
+                    <h2 id="login-form-title" class="sr-only">Formulaire de connexion</h2>
+                    <div class="control-group">
+                        <input type="text" class="login-field" value="" placeholder="Nom d'utilisateur" id="login-name" aria-required="true" />
+                        <label class="login-field-icon fui-user" for="login-name"></label>
+                    </div>
+
+                    <div class="control-group">
+                        <input type="password" class="login-field" value="" placeholder="Mot de passe" id="login-pass" aria-required="true" />
+                        <label class="login-field-icon fui-lock" for="login-pass"></label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-large btn-block">Se connecter</button>
+                    <a class="login-link" href="#" id="forgot-password-link">Mot de passe oublié ?</a>
+                </form>
+            </div>
+        </div>
+
+        <div class="reset-password" id="reset-password-form" aria-hidden="true" style="display: none;">
+            <div class="reset-password-screen">
+                <div class="app-title">
+                    <h1>Réinitialisation du mot de passe</h1>
+                </div>
+                <form class="reset-password-form" aria-labelledby="reset-password-form-title">
+                    <h2 id="reset-password-form-title" class="sr-only">Formulaire de réinitialisation du mot de passe</h2>
+                    <div class="control-group">
+                        <input type="email" class="login-field" value="" placeholder="Email" id="reset-email" required aria-required="true" />
+                        <label class="login-field-icon fui-mail" for="reset-email"></label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-large btn-block">Envoyer le lien de réinitialisation</button>
+                    <a class="login-link" href="#" id="back-to-login-link">Retour à la connexion</a>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Fil rouge de la formation.</p>
+            <ul class="footer-links">
+                <li><a href="#">Politique de confidentialité</a></li>
+                <li><a href="#">Conditions d'utilisation</a></li>
+                <li><a href="contact.html">Contactez-nous</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Popup about -->
+    <div id="aboutPopup" class="popup" role="dialog" aria-labelledby="popup-title" aria-describedby="popup-description" aria-hidden="true">
+        <div class="popup-content">
+            <span class="close-btn" aria-label="Fermer le popup">&times;</span>
+            <h2 id="popup-title">À propos de la connexion</h2>
+            <p id="popup-description">
+                Si vous vous êtes inscrit précédemment, je vous ai envoyé par mail votre identifiant et un mot de passe provisoire. Si vous avez oublié le mot de passe ou l'identifiant, veuillez cliquer sur le lien 'mot de passe oublié' afin que je puisse vous envoyer un lien de réinitialisation.
+            </p>
+        </div>
+    </div>
+    <script src="assets/scripts/script.js"></script>
+    <script src="assets/scripts/scriptachatminute.js"></script>
+    <script src="assets/scripts/visiomodal.js"></script>
+    <script src="assets/scripts/razmdp.js"></script>
+</body>
+</html>
