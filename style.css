@@ -1,0 +1,62 @@
+@import url("./navbar.css");
+@import url("./banner.css");
+@import url("./responsiv.css");
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.menu {
+    background: linear-gradient(180deg, #1e3c72 0%, #2a69ac 100%); 
+    color: white; 
+    padding: 20px; 
+    text-align: center; 
+}
+
+.menu > div {
+    display: inline-block; 
+    margin: 10px; 
+    border: 15px black solid;
+}
+
+.menu img {
+    max-width: 100%; 
+    height: auto; 
+}
+
+.menu p {
+    margin-top: 5px; 
+    font-size: 1em; 
+    color: #ffffff; }
+.footer {
+    background-color: #333; /* Couleur de fond du footer */
+    color: white; /* Couleur du texte du footer */
+    padding: 20px; /* Espacement intérieur */
+    text-align: center; /* Centrer le texte */
+}
+
+.footer-content {
+    max-width: 1200px; /* Largeur maximale */
+    margin: auto; /* Centrer le contenu */
+}
+
+.footer-links {
+    list-style: none; /* Supprime les puces */
+    padding: 0; /* Supprime le padding */
+    margin: 10px 0 0 0; /* Marge du haut */
+}
+
+.footer-links li {
+    display: inline; /* Affiche les liens en ligne */
+    margin: 0 10px; /* Espace entre les liens */
+}
+
+.footer-links a {
+    text-decoration: none; /* Supprime le soulignement */
+    color: white; /* Couleur des liens */
+    transition: color 0.3s; /* Transition pour la couleur */
+}
+
+.footer-links a:hover {
+    color: #00bcd4; /* Changer la couleur au survol */
+}
