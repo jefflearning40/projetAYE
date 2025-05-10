@@ -1,0 +1,227 @@
+
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--degrade-bg-color);
+}
+
+
+
+.menu {
+    background: var(--degrade-bg-color);
+    color:var(--pen-color-white);
+    padding: 20px;
+    text-align: center;
+}
+
+.menu > div {
+    display: inline-block;
+    margin: 10px;
+    border: 15px var(--pen-color-black);
+}
+
+.menu img {
+    max-width: 100%;
+    height: auto;
+}
+
+.menu p {
+    margin-top: 5px;
+    font-size: 1em;
+    color: var(--pen-color-white);
+}
+
+.img-container a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.img-container img {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.img-container:hover img,
+.img-container a:focus img {
+    transform: scale(1.1);
+}
+
+.img-container a:focus {
+    outline: 2px solid #1e3c72;
+}
+
+
+.popup {
+    display: none; 
+    position: fixed; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--pen-clear-black);
+    z-index: 1000;
+}
+
+.popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--pen-clear-white);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: var(--shadow-color-white);
+    text-align: center;
+}
+
+.close-btn {
+    cursor: pointer;
+    float: right;
+    font-size: 1.5em;
+    color:var(--pen-color-black);
+}
+.achat-minutes {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #75ade9;
+    margin-left: 20px;
+}
+
+.cart-icon {
+    width: 20px;
+    height: auto;
+    margin-left: 5px;
+}
+
+
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+.buttons-section {
+    text-align: center;
+    padding: 20px;
+    background: var(--degrade-bg-color);
+    color: var(--pen-color-white);
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.button-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.category-button {
+    background-color: var(--pen-color-dark-blue); 
+    color: var(--pen-color-white);
+    border: none;
+    padding: 15px 30px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.category-button.half-completed {
+    background-color: var(--pen-color-yellow); /* Jaune */
+}
+
+.category-button.completed {
+    background-color: var(--pen-color-green); /* Vert */
+}
+
+.category-button:hover,
+.category-button:focus {
+    background-color: var(--pen-color-gray);
+}
+
+.percentage {
+    font-size: 1em;
+    color: var(--pen-color-white);
+}
+.pdf-button-section {
+    text-align: center;
+    padding: 20px;
+    background: var(--degrade-bg-color);
+    color: var(--pen-color-white);
+}
+
+.pdf-button {
+    display: inline-block;
+    background-color: var(--pen-color-dark-blue);
+    color: var(--pen-color-white);
+    border: none;
+    padding: 15px 30px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+.pdf-button:hover,
+.pdf-button:focus {
+    background-color: var(--pen-color-gray);
+}
+
+@media (max-width: 768px) {
+    .teams-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .participants-grid {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    }
+
+    .participant {
+        height: 80px;
+        font-size: 1.2em;
+    }
+
+    .teams-logo {
+        max-width: 80px;
+    }
+
+    .teams-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .achat-minutes {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    .participants-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); 
+    }
+    .buttons-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .button-group {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .category-button {
+        width: 100%;
+        max-width: 400px;
+        margin-bottom: 10px;
+    }
+}

@@ -1,0 +1,4 @@
+@mixin background-gradient($direction, $colors...) {
+    background: nth($colors, 1) !important;
+    background: linear-gradient($direction, $colors...) !important;
+}
