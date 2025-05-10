@@ -1,57 +1,81 @@
 .navbar {
-    position: fixed; 
-    top: 0; 
-    left: 0; 
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    background-color: #333; 
-    color: white; 
-    z-index: 1000; 
-    display: flex; 
-    align-items: center; 
-    padding: 10px 15px; /
+    background-color: #333;
+    color: white;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
 }
 
 .logo {
-    margin-right: 20px; 
+    margin-right: 20px;
 }
 
 .logo img {
-    max-height: 50px; 
-    width: auto; 
+    max-height: 50px;
+    width: auto;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 1em; 
+    gap: 1em;
     margin: 0;
-    padding: 0; 
-    padding-left: 10px; 
+    padding: 0;
+    padding-left: 10px;
+    position: absolute;
+    top: 60px; /* Ajustez cette valeur en fonction de la hauteur de votre navbar */
+    right: 10px; /* Positionne le menu à droite */
+    background-color: #333; /* Assurez-vous que le fond est visible */
+    flex-direction: column;
+    width: 200px; /* Ajustez la largeur selon vos besoins */
+    display: none; /* Caché par défaut */
+}
+
+.nav-links.active {
+    display: flex; /* Affiche le menu lorsqu'il est actif */
 }
 
 .nav-links a {
     text-decoration: none;
     color: white;
-    transition: color 0.3s, background-color 0.3s; 
-    padding: 5px 8px; 
+    transition: color 0.3s, background-color 0.3s;
+    padding: 5px 8px;
 }
 
 .nav-links a:hover,
-.nav-links a:focus { 
-    color: #00bcd4; 
-    background-color: rgba(0, 188, 212, 0.2); 
-    border-radius: 4px; 
+.nav-links a:focus {
+    color: #00bcd4;
+    background-color: rgba(0, 188, 212, 0.2);
+    border-radius: 4px;
 }
 
 .hamburger {
-    display: none; 
+    display: none;
     flex-direction: column;
-    gap: 5px; 
+    gap: 5px;
     cursor: pointer;
+    margin-left: auto; /* Aligne le hamburger à droite */
 }
 
 .hamburger span {
     width: 25px;
     height: 3px;
     background-color: white;
+}
+
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+    .nav-links {
+        display: none;
+    }
+    .nav-links.active {
+        display: flex;
+    }
 }

@@ -1,6 +1,0 @@
-# ignore all xml
-*.xml
-
-resources/*
-node_modules
-.DS_Store
