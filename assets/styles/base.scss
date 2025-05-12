@@ -17,3 +17,9 @@
 @use "shame";
 @use"errorform";
 @use"verbesirregulier.scss";
+@use 'elements/reset';
+@use 'elements/document';
+
+@use 'settings/config.colors';
+
+@use 'components/sections';
