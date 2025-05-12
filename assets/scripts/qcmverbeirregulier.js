@@ -390,7 +390,7 @@ document.addEventListener('DOMContentLoaded', function() {
         returnButton.textContent = 'Retour';
         returnButton.classList.add('app-button');
         returnButton.addEventListener('click', function() {
-            window.location.href = 'pagetest.html'; 
+            window.location.href = 'pagetest.html'; // Rediriger vers pagetest.html
         });
 
         qcmContent.appendChild(returnButton);
@@ -415,12 +415,12 @@ document.addEventListener('DOMContentLoaded', function() {
         successSound.play().catch(e => console.error("Error playing success sound:", e));
     }
 
-   function playApplauseSound() {
+    function playApplauseSound() {
         const applauseSound = new Audio('assets/sounds/applause.mp3');
         applauseSound.play().catch(e => console.error("Error playing applause sound:", e));
     }
       function playPauseSound() {
-        console.log("Playing pause sound"); 
+        console.log("Playing pause sound"); // Ajout d'un log pour vérifier si la fonction est appelée
         const pauseSound = new Audio('assets/sounds/arigato.mp3');
         pauseSound.play().catch(e => console.error("Error playing pause sound:", e));
     }

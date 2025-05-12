@@ -4,13 +4,17 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const CssoWebpackPlugin = require('csso-webpack-plugin').default;
 const LicensePlugin = require('webpack-license-plugin');
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin'); // ajouté
 
-// Détection des modes
 const isProduction = process.env.NODE_ENV === 'production';
-const isWatch = process.argv.includes('--watch');
 
 module.exports = {
   mode: isProduction ? 'production' : 'development',
+
+  stats: 'errors-warnings', // ✅ réduit les messages inutiles
+  infrastructureLogging: {
+    level: 'error', // ✅ évite les logs système trop bavards
+  },
 
   entry: {
     theme: ['./assets/scripts/base.js', './assets/styles/base.scss'],
@@ -25,15 +29,13 @@ module.exports = {
     preferRelative: true,
   },
 
-  stats: isWatch ? 'errors-only' : { children: true },
-
   module: {
     rules: [
       {
         test: /\.js$/,
         loader: 'esbuild-loader',
         options: {
-          minify: isProduction, // JS minifié uniquement en prod
+          minify: isProduction,
           target: 'es2015',
         },
       },
@@ -43,20 +45,20 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
-            options: {
-              sourceMap: !isProduction,
-            },
+            options: { sourceMap: !isProduction },
           },
           {
             loader: 'postcss-loader',
-            options: {
-              sourceMap: !isProduction,
-            },
+            options: { sourceMap: !isProduction },
           },
           {
             loader: 'sass-loader',
             options: {
               sourceMap: !isProduction,
+              implementation: require('sass'),
+              sassOptions: {
+                includePaths: [path.resolve(__dirname, 'assets/styles')], // ✅ pour résoudre les @use
+              },
             },
           },
         ],
@@ -75,15 +77,11 @@ module.exports = {
           'style-loader',
           {
             loader: 'css-loader',
-            options: {
-              sourceMap: !isProduction,
-            },
+            options: { sourceMap: !isProduction },
           },
           {
             loader: 'postcss-loader',
-            options: {
-              sourceMap: !isProduction,
-            },
+            options: { sourceMap: !isProduction },
           },
         ],
       },
@@ -91,13 +89,11 @@ module.exports = {
   },
 
   plugins: [
+    new FriendlyErrorsWebpackPlugin(), // ✅ messages d’erreurs propres
     new MiniCssExtractPlugin({
       filename: path.join('..', 'css', '[name].css'),
     }),
-
-    // Minification CSS uniquement en production
     ...(isProduction ? [new CssoWebpackPlugin({ forceMediaMerge: true })] : []),
-
     new LicensePlugin({
       outputFilename: 'thirdPartyNotice.json',
       licenseOverrides: {
@@ -115,9 +111,7 @@ module.exports = {
             parallel: true,
             extractComments: false,
             terserOptions: {
-              compress: {
-                drop_console: true,
-              },
+              compress: { drop_console: true },
             },
           }),
         ],
