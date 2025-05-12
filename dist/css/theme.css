@@ -1009,14 +1009,14 @@ body {
   background-color: #0055aa;
 }
 
-.app-button, .qcm-navigation button, .button-container a,
+/*.app-button, .qcm-navigation button, .button-container a,
 .button-container button, .pdf-button {
   color: white;
   text-decoration: none;
   border: none;
   border-radius: 10px;
   cursor: pointer;
-}
+}*/
 
 .pdf-button {
   background-color: #003366;
@@ -1361,4 +1361,23 @@ body {
   font-size: 16px;
   margin: 20px auto; /* Centre le bouton */
   display: block; /* Assure que le bouton est centré */
+}
+@media only screen and (max-width: 600px) {
+    .qcm-navigation {
+        flex-direction: column; /* Change la direction en colonne pour les petits écrans */
+        align-items: center; /* Centre les éléments */
+        margin-top: 10px; /* Réduit la marge pour les petits écrans */
+    }
+
+    .qcm-navigation button {
+        margin: 5px 0; /* Réduit la marge verticale pour les boutons */
+        width: 100%; /* Fait en sorte que les boutons prennent toute la largeur */
+    }
+}
+
+/* Pour les écrans plus grands */
+@media only screen and (min-width: 601px) {
+    .qcm-navigation button {
+        margin: 0 10px; /* Augmente la marge horizontale pour les écrans plus grands */
+    }
 }
