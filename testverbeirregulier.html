@@ -72,8 +72,7 @@
             <p id="popup-description">Les verbes irréguliers sont très importants à connaître, ils vous permettent de vous situer dans le temps. En cliquant sur le bouton Verbes, un tableau complet des verbes irréguliers les plus utilisés est consultable.</p>
         </div>
     </div>
-<div id="votreElement">Votre texte</div>
-<button id="votreBouton">Cliquez-moi</button>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const scorePercentage = document.getElementById('scorePercentage');
@@ -92,15 +91,15 @@
         console.error("L'élément n'existe pas dans le DOM.");
     }
 
-    // Exemple pour visiomodal.js
-    const button = document.getElementById('votreBouton');
-    if (button) {
-        button.addEventListener('click', function() {
-            // Votre code ici
-        });
-    } else {
-        console.error("Le bouton n'existe pas dans le DOM.");
-    }
+    // // Exemple pour visiomodal.js
+    // const button = document.getElementById('votreBouton');
+    // if (button) {
+    //     button.addEventListener('click', function() {
+    //         // Votre code ici
+    //     });
+    // } else {
+    //     console.error("Le bouton n'existe pas dans le DOM.");
+    // }
 });
 pauseButton.addEventListener('click', function() {
     console.log("Pause button clicked");
