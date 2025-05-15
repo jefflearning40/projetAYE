@@ -31,7 +31,7 @@
     <h1 class="banner-title">Salon de discussion</h1>
   </section>
 
- <section class="formulaire_achat">
+<section class="formulaire_achat">
   <h2>Achat</h2>
   <form action="#" method="post">
     <div class="form-group">
@@ -50,19 +50,29 @@
       <label for="produit">Produit :</label>
       <select id="produit" name="produit" required>
         <option value="">Sélectionnez le temps de discussion souhaitée</option>
-        <option value="">10 minutes 5  €</option>
-        <option value="">15 minutes 10 €</option>
-        <option value="">20 minutes 15 €</option>
-        <option value="">30 minutes 20 €</option>
+        <option value="10">10 minutes - 10 €</option>
+        <option value="15">15 minutes - 12 €</option>
+        <option value="20">20 minutes - 15 €</option>
+        <option value="30">30 minutes - 20 €</option>
       </select>
     </div>
     <div class="form-group">
-      <input type="checkbox" id="rgpd" name="rgpd" required>
-      <label for="rgpd">J'accepte que mes données soient utilisées conformément à la politique de confidentialité RGPD.</label>
-    </div>
+  <input type="checkbox" id="rgpd" name="rgpd" required>
+  <label for="rgpd">J'accepte que mes données soient utilisées conformément à la politique de confidentialité RGPD.</label>
+</div>
     <button type="submit">Acheter</button>
   </form>
 </section>
+<footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 fil rouge de la formation.</p>
+            <ul class="footer-links">
+                <li><a href="#">Politique de confidentialité</a></li>
+                <li><a href="#">Conditions d'utilisation</a></li>
+                <li><a href="contact.html">Contactez-nous</a></li>
+            </ul>
+        </div>
+    </footer>
     
     <script src="assets/scripts/script.js"></script>
     <script src="assets/scripts/scriptachatminute.js"></script>

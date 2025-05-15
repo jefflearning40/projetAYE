@@ -1,0 +1,84 @@
+.formulaire_achat {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  h2 {
+    text-align: center;
+    color: #333;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      height: 100px;
+    }
+
+    input[type="checkbox"] {
+      width: auto;
+      margin-right: 10px;
+    }
+
+    label[for="rgpd"] {
+      display: inline-block;
+      font-weight: normal;
+    }
+  }
+
+  .achat-minutes {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #75ade9;
+    margin-left: 20px;
+  }
+  .form-group input[type="checkbox"] {
+  width: auto;
+  margin-right: 10px;
+  transform: scale(1.5); /* Augmente la taille de la case à cocher pour la rendre plus visible */
+}
+
+.form-group label[for="rgpd"] {
+  display: inline-block;
+  font-weight: normal;
+}
+
+ button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #75ade9;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  display: block; /* Assurez-vous que le bouton est affiché comme un bloc */
+  margin-top: 10px; /* Ajoutez une marge pour séparer le bouton des autres éléments */
+
+  &:hover {
+    background-color: darken(#75ade9, 10%);
+  }
+}
+
+}

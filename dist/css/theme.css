@@ -1175,19 +1175,20 @@ body {
 
 #qcmSection {
   margin-top: 20px;
-  padding: 20px;
-  background-color: #f9f9f9;
+  padding: 0px;
+  background-color: rgba(208, 198, 198, 0.7450980392);
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  width: 80%;
+  box-shadow: 10px 12px 5px rgba(121, 194, 207, 0.64);
+  width: 90%;
   max-width: 600px;
-  margin-left: auto;
+  margin-left: 20px;
   margin-right: auto;
   text-align: left;
   margin-bottom: 30px;
 }
 #qcmSection h2 {
   text-align: center;
+  margin-top: 1.5rem;
   margin-bottom: 1.5rem;
   color: #333;
 }
@@ -1361,4 +1362,77 @@ body {
   font-size: 16px;
   margin: 20px auto; /* Centre le bouton */
   display: block; /* Assure que le bouton est centré */
+}
+
+.formulaire_achat {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.formulaire_achat h2 {
+  text-align: center;
+  color: #333;
+}
+.formulaire_achat .form-group {
+  margin-bottom: 15px;
+}
+.formulaire_achat .form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.formulaire_achat .form-group input[type=text],
+.formulaire_achat .form-group input[type=email],
+.formulaire_achat .form-group textarea,
+.formulaire_achat .form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.formulaire_achat .form-group textarea {
+  height: 100px;
+}
+.formulaire_achat .form-group input[type=checkbox] {
+  width: auto;
+  margin-right: 10px;
+}
+.formulaire_achat .form-group label[for=rgpd] {
+  display: inline-block;
+  font-weight: normal;
+}
+.formulaire_achat .achat-minutes {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #75ade9;
+  margin-left: 20px;
+}
+.formulaire_achat .form-group input[type=checkbox] {
+  width: auto;
+  margin-right: 10px;
+  transform: scale(1.5); /* Augmente la taille de la case à cocher pour la rendre plus visible */
+}
+.formulaire_achat .form-group label[for=rgpd] {
+  display: inline-block;
+  font-weight: normal;
+}
+.formulaire_achat button[type=submit] {
+  width: 100%;
+  padding: 10px;
+  background-color: #75ade9;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  display: block; /* Assurez-vous que le bouton est affiché comme un bloc */
+  margin-top: 10px; /* Ajoutez une marge pour séparer le bouton des autres éléments */
+}
+.formulaire_achat button[type=submit]:hover {
+  background-color: rgb(73.0125, 146.8625, 225.9875);
 }
