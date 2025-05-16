@@ -1364,7 +1364,6 @@ body {
   display: block; /* Assure que le bouton est centré */
 }
 
-/* Reset CSS */
 * {
   margin: 0;
   padding: 0;
@@ -1402,7 +1401,18 @@ body {
 }
 .navbar .hamburger {
   display: none;
+  flex-direction: column;
+  gap: 5px;
   cursor: pointer;
+  justify-content: center; /* Centre les éléments verticalement */
+  align-items: center; /* Centre les éléments horizontalement */
+}
+.navbar .hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 2px 0;
 }
 
 /* Banner */
@@ -1427,16 +1437,19 @@ body {
 .formulaire_achat {
   max-width: 600px;
   margin: 0rem auto;
-  padding: 0rem;
+  padding: 1rem; /* Ajout de padding pour éviter que le contenu ne touche les bords */
   border: 1px solid #ddd;
   border-radius: 5px;
 }
 .formulaire_achat h2 {
   text-align: center;
   margin-bottom: 1rem;
+  color: white;
 }
 .formulaire_achat .form-group {
   margin-bottom: 1rem;
+  /* Style pour la case à cocher */
+  /* Style pour le label associé à la case à cocher */
 }
 .formulaire_achat .form-group label {
   display: block;
@@ -1454,10 +1467,21 @@ body {
 .formulaire_achat .form-group textarea {
   height: 100px;
 }
+.formulaire_achat .form-group input[type=checkbox] {
+  width: auto; /* Largeur automatique pour ne pas s'étendre */
+  margin-right: 10px; /* Espace entre la case à cocher et le texte */
+  -webkit-appearance: checkbox; /* Assure que la case à cocher est visible sur les navigateurs WebKit */
+  -moz-appearance: checkbox; /* Assure que la case à cocher est visible sur les navigateurs Mozilla */
+  appearance: checkbox; /* Standard pour assurer la visibilité de la case à cocher */
+}
+.formulaire_achat .form-group input[type=checkbox] + label {
+  display: inline; /* Assure que le label est en ligne avec la case à cocher */
+  margin-bottom: 0; /* Supprime la marge inférieure pour l'alignement */
+}
 .formulaire_achat button[type=submit] {
   width: 100%;
   padding: 0.75rem;
-  background-color: #333;
+  background-color: #0f54d4;
   color: white;
   border: none;
   border-radius: 4px;
@@ -1497,6 +1521,6 @@ body {
     display: none;
   }
   .navbar .hamburger {
-    display: block;
+    display: flex; /* Affiche le menu hamburger sur les petits écrans */
   }
 }
