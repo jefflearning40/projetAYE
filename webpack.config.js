@@ -16,8 +16,8 @@ module.exports = {
   mode: isProduction ? 'production' : 'development',
 
   entry: {
-    theme: ['./assets/scripts/base.js', './assets/styles/base.scss'],
-  },
+  theme: ['./assets/scripts/base.js', './assets/styles/base.scss']
+}
 
   output: {
     path: path.resolve(__dirname, 'dist/js'),
