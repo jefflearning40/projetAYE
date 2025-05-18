@@ -1,4 +1,4 @@
-// Active les traces de dépréciation dans le terminal
+
 process.traceDeprecation = true;
 
 const webpack = require('webpack');
@@ -104,7 +104,7 @@ module.exports = {
       filename: path.join('..', 'css', '[name].css'),
     }),
 
-    // ESLintPlugin pour analyse JS
+    
     new ESLintPlugin({
       extensions: ['js'],
       emitWarning: true,

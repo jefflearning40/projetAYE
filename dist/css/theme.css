@@ -298,36 +298,29 @@ body {
 .footer {
   background-color: #333;
   color: white;
-  padding: 20px;
+  padding: 10px; /* Réduire le padding pour diminuer la hauteur */
   text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
-.footer-content {
-  max-width: 1200px;
-  margin: auto;
-}
-
-.footer-links {
+.footer .footer-links {
+  display: flex;
+  justify-content: center;
   list-style: none;
-  padding: 0;
-  margin: 10px 0 0 0;
+  margin-top: 5px; /* Réduire la marge supérieure */
 }
 
-.footer-links li {
-  display: inline;
+.footer .footer-links li {
   margin: 0 10px;
 }
 
-.footer-links a {
-  text-decoration: none;
+.footer .footer-links li a {
   color: white;
-  transition: color 0.3s;
+  text-decoration: none;
 }
 
-.footer-links a:hover {
-  color: #00bcd4;
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
-}
 
 /* Styles généraux (à appliquer à tous les appareils) */
 body {
