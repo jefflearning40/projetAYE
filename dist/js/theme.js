@@ -7,15 +7,16 @@
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./assets/scripts/base.js":
 /*!********************************!*\
   !*** ./assets/scripts/base.js ***!
   \********************************/
-/***/ (() => {
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-eval("\n\n//# sourceURL=webpack://Afec_starter_kit/./assets/scripts/base.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n\n\n//# sourceURL=webpack://Afec_Starter_kit/./assets/scripts/base.js?");
 
 /***/ }),
 
@@ -25,8 +26,7 @@ eval("\n\n//# sourceURL=webpack://Afec_starter_kit/./assets/scripts/base.js?");
   \*********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://Afec_starter_kit/./assets/styles/base.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://Afec_Starter_kit/./assets/styles/base.scss?");
 
 /***/ })
 
