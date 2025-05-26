@@ -1,4 +1,3 @@
 <?
-define(../dist/css);
+define(../dist/css/style_aye.css);
 define(../dist/js/);
-define(../assets/pictures/);

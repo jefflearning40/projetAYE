@@ -1,14 +1,12 @@
-
 .app-button {
     color: white;
     text-decoration: none;
     border: none;
     border-radius: 10px;
     cursor: pointer;
-  }
-  
-  
-  .pdf-button {
+}
+
+.pdf-button {
     @extend .app-button;
     background-color: #003366;
     padding: 10px 20px;
@@ -16,36 +14,11 @@
     font-size: 16px;
     margin: 10px;
     transition: background 0.2s ease;
-  
+
     &:hover {
       background-color: #0055aa;
     }
-  }
-  
-  
-.app-button {
-  color: white;
-  text-decoration: none;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
 }
-
-
-.pdf-button {
-  @extend .app-button;
-  background-color: #003366;
-  padding: 10px 20px;
-  display: inline-block;
-  font-size: 16px;
-  margin: 10px;
-  transition: background 0.2s ease;
-
-  &:hover {
-    background-color: #0055aa;
-  }
-}
-
 
 .button-container {
   a,
@@ -74,7 +47,7 @@
   margin-left: auto;
   margin-right: auto;
   text-align: left;
-  margin-bottom: 30px;
+  margin-bottom: 80px;
 
   h2 {
     text-align: center;
@@ -159,7 +132,6 @@
   color: #555;
 }
 
-
 .popup {
   display: none;
   position: fixed;
@@ -207,170 +179,27 @@
   margin-top: 15px;
   text-align: center;
 }
-  
-  #qcmSection {
-    margin-top: 20px;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    width: 80%;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: left;
-    margin-bottom: 30px;
-  
-    h2 {
-      text-align: center;
-      margin-bottom: 1.5rem;
-      color: #333;
-    }
-  
-    form {
-      width: 100%;
-    }
-  
-    p {
-      margin-bottom: 1.2rem;
-      padding: 10px;
-      border-bottom: 1px solid #eee;
-  
-      &:last-child {
-        border-bottom: none;
-      }
-    }
-  
-    label {
-      display: inline-flex;
-      align-items: center;
-      margin-right: 20px;
-      cursor: pointer;
-    }
-  
-    input[type="radio"] {
-      margin-right: 5px;
-      width: 1.2em;
-      height: 1.2em;
-      border: 1px solid #333;
-  
-      &:checked {
-        border: 2px solid #007bff;
-        outline: 2px solid #007bff;
-      }
-    }
-  
-    button[type="submit"] {
-      background-color: #007bff;
-      color: white;
-      padding: 12px 25px;
-      border: none;
-      border-radius: 5px;
-      font-size: 1em;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      margin-top: 20px;
-  
+
+.qcm-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+
+  button {
+      @extend .app-button;
+      background-color: blue;
+      padding: 10px 20px;
+      margin: 0 10px;
+      font-size: 16px;
+
       &:hover {
-        background-color: #0056b3;
+          background-color: darkblue;
       }
-    }
   }
-  
-  .qcm-controls {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
-  }
-  
-  #nextQuestion {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s ease;
-  
-    &:hover {
-      background-color: #0056b3;
-    }
-  }
-  
-  #questionCounter {
-    font-size: 1em;
-    color: #555;
-  }
-  
-  
-  .popup {
-    display: none;
-    position: fixed;
-    z-index: 10000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
-    justify-content: center;
-    align-items: center;
-  
-    &-content {
-      background-color: #fefefe;
-      margin: 15% auto;
-      padding: 20px;
-      border: 1px solid #888;
-      width: 80%;
-      max-width: 500px;
-      border-radius: 5px;
-      position: relative;
-    }
-  
-    .close-btn {
-      color: #aaa;
-      position: absolute;
-      top: 0;
-      right: 10px;
-      font-size: 28px;
-      font-weight: bold;
-      cursor: pointer;
-  
-      &:hover,
-      &:focus {
-        color: black;
-        text-decoration: none;
-        cursor: pointer;
-      }
-    }
-  }
-  
-  #finalScore {
-    font-size: 1.2em;
-    margin-top: 15px;
-    text-align: center;
-  }
- .qcm-navigation {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-
-    button {
-        @extend .app-button;
-        background-color: blue;
-        padding: 10px 20px;
-        margin: 0 10px;
-        font-size: 16px;
-
-        &:hover {
-            background-color: darkblue;
-        }
-    }
 }
+
 .popup {
-  display: none; /* Initialement masqué */
+  display: none;
   justify-content: center;
   align-items: center;
   position: fixed;
@@ -399,6 +228,7 @@
   font-size: 20px;
   cursor: pointer;
 }
+
 .app-button {
   color: white;
   text-decoration: none;
@@ -408,6 +238,6 @@
   background-color: blue;
   padding: 10px 20px;
   font-size: 16px;
-  margin: 20px auto; /* Centre le bouton */
-  display: block; /* Assure que le bouton est centré */
+  margin: 20px auto;
+  display: block;
 }
