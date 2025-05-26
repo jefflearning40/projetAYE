@@ -1480,15 +1480,15 @@ body {
   height: 100px;
 }
 .formulaire_achat .form-group input[type=checkbox] {
-  width: auto; /* Largeur automatique pour ne pas s'étendre */
-  margin-right: 10px; /* Espace entre la case à cocher et le texte */
-  -webkit-appearance: checkbox; /* Assure que la case à cocher est visible sur les navigateurs WebKit */
-  -moz-appearance: checkbox; /* Assure que la case à cocher est visible sur les navigateurs Mozilla */
-  appearance: checkbox; /* Standard pour assurer la visibilité de la case à cocher */
+  width: auto; 
+  margin-right: 10px;
+  -webkit-appearance: checkbox; 
+  -moz-appearance: checkbox; 
+  appearance: checkbox; 
 }
 .formulaire_achat .form-group input[type=checkbox] + label {
-  display: inline; /* Assure que le label est en ligne avec la case à cocher */
-  margin-bottom: 0; /* Supprime la marge inférieure pour l'alignement */
+  display: inline; 
+  margin-bottom: 0; 
 }
 .formulaire_achat button[type=submit] {
   width: 100%;
@@ -1531,6 +1531,6 @@ body {
     display: none;
   }
   .navbar .hamburger {
-    display: flex; /* Affiche le menu hamburger sur les petits écrans */
+    display: flex; 
   }
 }
